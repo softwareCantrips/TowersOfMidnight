@@ -237,6 +237,12 @@
           "value": 6
         }
       ]
+    },
+    {
+      "folded": true,
+      "name": "Rubys",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
