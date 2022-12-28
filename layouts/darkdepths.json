@@ -38,6 +38,21 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Portal",
+      "persistentUuid": "881deee9-204f-4cfe-8b8c-f365fff4b8af",
+      "width": 0,
+      "x": 965,
+      "y": 508,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
