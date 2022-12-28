@@ -1,0 +1,587 @@
+{
+  "b": 209,
+  "disableInputWhenNotFocused": true,
+  "mangledName": "OptionsMenu",
+  "name": "OptionsMenu",
+  "r": 209,
+  "standardSortMethod": true,
+  "stopSoundsOnStartup": true,
+  "title": "",
+  "v": 209,
+  "uiSettings": {
+    "grid": true,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": true,
+    "zoomFactor": 1.174315867046327,
+    "windowMask": false
+  },
+  "objectsGroups": [],
+  "variables": [],
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 102,
+      "layer": "",
+      "name": "BackToMenuButton",
+      "persistentUuid": "63fcba10-dae5-4efa-993f-e78feb156063",
+      "width": 256,
+      "x": 544,
+      "y": 704,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 55,
+      "layer": "",
+      "name": "BackToMenuButtonText",
+      "persistentUuid": "c1128338-ed0d-4eeb-8e71-9b6f416e68d8",
+      "width": 186,
+      "x": 579,
+      "y": 727,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "",
+      "name": "VolumeSlider",
+      "persistentUuid": "c291a5b4-61c4-4a2c-af02-fc4e43a57472",
+      "width": 50,
+      "x": 768,
+      "y": 352,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 23,
+      "layer": "",
+      "name": "TestSliderText",
+      "persistentUuid": "28fab334-f6ac-4ab7-a74b-525f0adc1fd6",
+      "width": 64,
+      "x": 768,
+      "y": 393,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "SetVolume",
+      "persistentUuid": "355bfadf-6199-4f65-8d6d-c5cc67ffafbc",
+      "width": 0,
+      "x": 543,
+      "y": 320,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "name": "BackToMenuButton",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "NewSprite-1-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "BackToMenuButtonText",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Menu",
+      "font": "",
+      "textAlignment": "center",
+      "characterSize": 48,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "SetVolume",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Volume",
+      "font": "",
+      "textAlignment": "center",
+      "characterSize": 48,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "VolumeSlider",
+      "tags": "",
+      "type": "PrimitiveDrawing::Drawer",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "DraggableSliderControl",
+          "type": "DraggableSliderControl::DraggableSliderControl",
+          "ValueMin": 0,
+          "ValueMax": 1,
+          "TickSpacing": 0,
+          "ThumbShape": "circle",
+          "ThumbWidth": 20,
+          "ThumbHeight": 20,
+          "ThumbColor": " 24;119;211",
+          "ThumbOpacity": 255,
+          "TrackLength": 200,
+          "TrackThickness": 4,
+          "InactiveTrackColor": "",
+          "InactiveTrackOpacity": 96,
+          "ActiveTrackColor": " ",
+          "ActiveTrackOpacity": 255,
+          "HaloRadius": 24,
+          "HaloOpacityHover": 32,
+          "HaloOpacityClick": 64,
+          "RoundedTrack": true,
+          "Enabled": true,
+          "IsBeingDragged": false,
+          "Value": 0,
+          "ThumbOffset": 0,
+          "NeedRedraw": true,
+          "IsHovered": false,
+          "MouseX": 0,
+          "MouseY": 0,
+          "CurrentHaloRadius": 0,
+          "HaloGrowSpeed": 0.2,
+          "TargetHaloRadius": 0.19999992847442627
+        }
+      ],
+      "fillOpacity": 255,
+      "outlineSize": 1,
+      "outlineOpacity": 255,
+      "fillColor": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "outlineColor": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "absoluteCoordinates": false,
+      "clearBetweenFrames": true
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "TestSliderText",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Text",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    }
+  ],
+  "events": [
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "At the beginning of the scene",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ZoomCamera"
+              },
+              "parameters": [
+                "",
+                "1.85",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SceneBackground"
+              },
+              "parameters": [
+                "",
+                "\"66;66;66\""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Back to Menu Button",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Hover over",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "BackToMenuButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "BackToMenuButton",
+                    "Tween",
+                    "\"tweenScale\"",
+                    "4",
+                    "4",
+                    "\"linear\"",
+                    "200",
+                    "",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "BackToMenuButtonText",
+                    "Tween",
+                    "\"tweenText\"",
+                    "1.255",
+                    "1.255",
+                    "\"linear\"",
+                    "200",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "BackToMenuButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "BackToMenuButton",
+                    "Tween",
+                    "\"tweenScale\"",
+                    "3.1875",
+                    "3.1875",
+                    "\"linear\"",
+                    "200",
+                    "",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "BackToMenuButtonText",
+                    "Tween",
+                    "\"tweenText\"",
+                    "1",
+                    "1",
+                    "\"linear\"",
+                    "200",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Click",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "BackToMenuButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"MainMenu\"",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarScene"
+          },
+          "parameters": [
+            "VolumeMultiplier",
+            "=",
+            "round((VolumeSlider.DraggableSliderControl::Value()) * 100)"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextObject::String"
+          },
+          "parameters": [
+            "TestSliderText",
+            "=",
+            "ToString(Variable(VolumeMultiplier))"
+          ]
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "ambientLightColorB": 7701152,
+      "ambientLightColorG": 150995054,
+      "ambientLightColorR": 1869182049,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "",
+      "visibility": true,
+      "cameras": [
+        {
+          "defaultSize": true,
+          "defaultViewport": true,
+          "height": 0,
+          "viewportBottom": 1,
+          "viewportLeft": 0,
+          "viewportRight": 1,
+          "viewportTop": 0,
+          "width": 0
+        }
+      ],
+      "effects": []
+    }
+  ],
+  "behaviorsSharedData": [
+    {
+      "name": "DraggableSliderControl",
+      "type": "DraggableSliderControl::DraggableSliderControl"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
+    }
+  ]
+}
