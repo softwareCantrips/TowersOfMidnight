@@ -13,7 +13,7 @@
     "packageName": "com.example.gamename",
     "pixelsRounding": false,
     "projectUuid": "033097d4-c191-4629-836d-13d3d72fc54f",
-    "scaleMode": "linear",
+    "scaleMode": "nearest",
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
     "useExternalSourceFiles": false,
@@ -124,29 +124,11 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "assets/block.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\block.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "assets/hellstone.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\hellstone.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
         "file": "assets/floor.png",
         "kind": "image",
         "metadata": "",
         "name": "assets\\floor.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": true
       },
       {
@@ -155,7 +137,7 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\Portal.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": true
       },
       {
@@ -164,7 +146,7 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\spawner.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": false
       },
       {
@@ -173,7 +155,7 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\creep.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": true
       },
       {
@@ -182,7 +164,7 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\creep2.png",
-        "smoothed": true,
+        "smoothed": false,
         "userAdded": true
       },
       {
@@ -191,7 +173,34 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\stoneTower.png",
-        "smoothed": true,
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "NewSprite-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewSprite-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/block.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\block.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/hellstone.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\hellstone.png",
+        "smoothed": false,
         "userAdded": true
       }
     ],
@@ -199,7 +208,37 @@
   },
   "objects": [],
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "LevelScores",
+      "type": "structure",
+      "children": [
+        {
+          "folded": true,
+          "name": "Level1",
+          "type": "number",
+          "value": 12
+        },
+        {
+          "folded": true,
+          "name": "Level2",
+          "type": "number",
+          "value": 4
+        },
+        {
+          "name": "Level3",
+          "type": "number",
+          "value": 5
+        },
+        {
+          "folded": true,
+          "name": "Level4",
+          "type": "number",
+          "value": 6
+        }
+      ]
+    }
+  ],
   "layouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,

@@ -18,43 +18,12 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.807639298560663,
+    "zoomFactor": 0.5963714163013051,
     "windowMask": false
   },
   "objectsGroups": [],
   "variables": [],
-  "instances": [
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "name": "Floor",
-      "persistentUuid": "314e6688-9564-4db5-8904-a290bbeaa0e4",
-      "width": 0,
-      "x": 929,
-      "y": 493,
-      "zOrder": 1,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "name": "Portal",
-      "persistentUuid": "881deee9-204f-4cfe-8b8c-f365fff4b8af",
-      "width": 0,
-      "x": 965,
-      "y": 508,
-      "zOrder": 2,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    }
-  ],
+  "instances": [],
   "objects": [
     {
       "assetStoreId": "5c32aeab23e0c011e7885edd37b6ec5e2243ed060182105232b08349b20a3017",
@@ -313,7 +282,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "hellstone",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -564,6 +533,47 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "NewSprite",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "NewSprite-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "events": [
@@ -589,6 +599,11 @@
           ]
         }
       ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
     }
   ],
   "layers": [
