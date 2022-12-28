@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.5014865861275467,
+    "zoomFactor": 0.5468749999999911,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -53,6 +53,51 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 242,
+      "layer": "UILayer",
+      "name": "NewSprite2",
+      "persistentUuid": "00f8c918-f99a-4757-a9fd-6fb5afb252c7",
+      "width": 625,
+      "x": -1,
+      "y": 833,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "UiTarget",
+      "persistentUuid": "390dc918-e3cd-4934-ac1b-7d349bc9a4ca",
+      "width": 0,
+      "x": 159,
+      "y": 963,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "UiStoneTower",
+      "persistentUuid": "6ad736e6-29dd-46c4-88f5-6f1b999df756",
+      "width": 0,
+      "x": 380,
+      "y": 941,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -67,7 +112,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "Cursor-3",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -76,7 +121,48 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "Cursor-3.png",
+                  "image": "assets\\Cursor-3-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 7,
+                    "y": 7
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "5c32aeab23e0c011e7885edd37b6ec5e2243ed060182105232b08349b20a3017",
+      "name": "UiTarget",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Cursor-3",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\Cursor-3-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -567,6 +653,47 @@
     },
     {
       "assetStoreId": "",
+      "name": "UiStoneTower",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\stoneTower.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
       "name": "NewSprite",
       "tags": "",
       "type": "Sprite",
@@ -629,6 +756,47 @@
       "variables": [],
       "effects": [],
       "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "name": "NewSprite2",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\Textbox.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "events": [
@@ -741,6 +909,16 @@
             "-16",
             "=",
             "-16"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetSize"
+          },
+          "parameters": [
+            "UiTarget",
+            "32",
+            "32"
           ]
         }
       ]
