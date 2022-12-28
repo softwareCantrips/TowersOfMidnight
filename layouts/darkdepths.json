@@ -18,10 +18,41 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.7733980419227731,
+    "zoomFactor": 1.1927428326026033,
     "windowMask": false
   },
-  "objectsGroups": [],
+  "objectsGroups": [
+    {
+      "name": "UiSelectable",
+      "objects": [
+        {
+          "name": "UiSelectable1"
+        },
+        {
+          "name": "UiSelectable2"
+        }
+      ]
+    },
+    {
+      "name": "Selection",
+      "objects": [
+        {
+          "name": "Selection1"
+        },
+        {
+          "name": "Selection2"
+        }
+      ]
+    },
+    {
+      "name": "Buildings",
+      "objects": [
+        {
+          "name": "StoneTower"
+        }
+      ]
+    }
+  ],
   "variables": [],
   "instances": [
     {
@@ -44,7 +75,7 @@
       "customSize": false,
       "height": 0,
       "layer": "",
-      "name": "Target",
+      "name": "Selection1",
       "persistentUuid": "5e51070d-9d2b-4430-93c3-34cc5765652f",
       "width": 0,
       "x": 103,
@@ -59,7 +90,7 @@
       "customSize": true,
       "height": 242,
       "layer": "UILayer",
-      "name": "NewSprite2",
+      "name": "UiBox",
       "persistentUuid": "00f8c918-f99a-4757-a9fd-6fb5afb252c7",
       "width": 625,
       "x": -1,
@@ -74,11 +105,11 @@
       "customSize": false,
       "height": 0,
       "layer": "UILayer",
-      "name": "UiTarget",
+      "name": "UiSelectable1",
       "persistentUuid": "390dc918-e3cd-4934-ac1b-7d349bc9a4ca",
       "width": 0,
-      "x": 159,
-      "y": 963,
+      "x": 57,
+      "y": 898,
       "zOrder": 4,
       "numberProperties": [],
       "stringProperties": [],
@@ -89,11 +120,11 @@
       "customSize": false,
       "height": 0,
       "layer": "UILayer",
-      "name": "UiStoneTower",
+      "name": "UiSelectable2",
       "persistentUuid": "6ad736e6-29dd-46c4-88f5-6f1b999df756",
       "width": 0,
-      "x": 380,
-      "y": 941,
+      "x": 133,
+      "y": 879,
       "zOrder": 5,
       "numberProperties": [],
       "stringProperties": [],
@@ -103,7 +134,7 @@
   "objects": [
     {
       "assetStoreId": "5c32aeab23e0c011e7885edd37b6ec5e2243ed060182105232b08349b20a3017",
-      "name": "Target",
+      "name": "Selection1",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -143,14 +174,101 @@
       ]
     },
     {
-      "assetStoreId": "5c32aeab23e0c011e7885edd37b6ec5e2243ed060182105232b08349b20a3017",
-      "name": "UiTarget",
+      "assetStoreId": "",
+      "name": "Selection2",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
       "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\stoneTower.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "StoneTower",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\stoneTower.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "5c32aeab23e0c011e7885edd37b6ec5e2243ed060182105232b08349b20a3017",
+      "name": "UiSelectable1",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "Cursor-3",
@@ -168,6 +286,52 @@
                     "name": "origine",
                     "x": 7,
                     "y": 7
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "UiSelectable2",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\stoneTower.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -612,88 +776,6 @@
     },
     {
       "assetStoreId": "",
-      "name": "StoneTower",
-      "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "assets\\stoneTower.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetStoreId": "",
-      "name": "UiStoneTower",
-      "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "assets\\stoneTower.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetStoreId": "",
       "name": "NewSprite",
       "tags": "",
       "type": "Sprite",
@@ -759,7 +841,7 @@
     },
     {
       "assetStoreId": "",
-      "name": "NewSprite2",
+      "name": "UiBox",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -869,38 +951,6 @@
         },
         {
           "type": {
-            "value": "SetSize"
-          },
-          "parameters": [
-            "Target",
-            "31",
-            "31"
-          ]
-        },
-        {
-          "type": {
-            "value": "ChangePlan"
-          },
-          "parameters": [
-            "Target",
-            "=",
-            "1000"
-          ]
-        },
-        {
-          "type": {
-            "value": "MettreXY"
-          },
-          "parameters": [
-            "Target",
-            "=",
-            "0",
-            "=",
-            "0"
-          ]
-        },
-        {
-          "type": {
             "value": "MettreXY"
           },
           "parameters": [
@@ -909,16 +959,6 @@
             "-16",
             "=",
             "-16"
-          ]
-        },
-        {
-          "type": {
-            "value": "SetSize"
-          },
-          "parameters": [
-            "UiTarget",
-            "32",
-            "32"
           ]
         }
       ]
@@ -1028,49 +1068,15 @@
       ]
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "MouseX"
-          },
-          "parameters": [
-            "",
-            ">",
-            "0",
-            "",
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "MettreXY"
-          },
-          "parameters": [
-            "Target",
-            "=",
-            "MouseX()",
-            "=",
-            "MouseY()"
-          ]
-        },
-        {
-          "type": {
-            "value": "SnapToGrid::SnapObjectToVirtualGrid"
-          },
-          "parameters": [
-            "",
-            "Target",
-            "32",
-            "32",
-            "0",
-            "0",
-            ""
-          ]
-        }
-      ]
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Wenn UiSelection 1 = Auswahlwerkzeug",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [],
+      "parameters": []
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
@@ -1080,7 +1086,7 @@
             "value": "CollisionNP"
           },
           "parameters": [
-            "Target",
+            "Selection1",
             "Block",
             "",
             "",
@@ -1089,11 +1095,45 @@
         },
         {
           "type": {
-            "value": "MouseButtonPressed"
+            "value": "MouseButtonReleased"
           },
           "parameters": [
             "",
             "Left"
+          ]
+        },
+        {
+          "type": {
+            "value": "VarScene"
+          },
+          "parameters": [
+            "UiSelection",
+            "=",
+            "1"
+          ]
+        },
+        {
+          "type": {
+            "inverted": true,
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "Selection1",
+            "Buildings",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "inverted": true,
+            "value": "CollisionPoint"
+          },
+          "parameters": [
+            "UiBox",
+            "MouseX(\"UILayer\")",
+            "MouseY(\"UILayer\")"
           ]
         }
       ],
@@ -1108,6 +1148,554 @@
           ]
         }
       ]
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Wenn UiSelection2 = StoneTower",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [],
+      "parameters": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "Selection2",
+            "Block",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "inverted": true,
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "Selection2",
+            "UiBox",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "MouseButtonReleased"
+          },
+          "parameters": [
+            "",
+            "Left"
+          ]
+        },
+        {
+          "type": {
+            "value": "VarScene"
+          },
+          "parameters": [
+            "UiSelection",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "inverted": true,
+            "value": "CollisionPoint"
+          },
+          "parameters": [
+            "UiBox",
+            "MouseX(\"UILayer\")",
+            "MouseY(\"UILayer\")"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "StoneTower",
+            "Block.CenterX()",
+            "Block.CenterY()",
+            "\"Base Layer\""
+          ]
+        },
+        {
+          "type": {
+            "value": "DebuggerTools::ConsoleLog"
+          },
+          "parameters": [
+            "\"X = \" + ToString(Block.CenterX()) + \" Y = \" + ToString(Block.CenterY())",
+            "\"info\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "StoneTower",
+            "=",
+            "300"
+          ]
+        }
+      ]
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "UI",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "UiSelection",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSize"
+              },
+              "parameters": [
+                "Selection1",
+                "31",
+                "31"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "Selection1",
+                "=",
+                "1000"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Selection1",
+                "=",
+                "0",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSize"
+              },
+              "parameters": [
+                "UiSelectable1",
+                "32",
+                "32"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "HasSelectionMarker",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "SnapToGrid::SnapObjectToVirtualGrid"
+              },
+              "parameters": [
+                "",
+                "UiSelectable2",
+                "32",
+                "32",
+                "0",
+                "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SnapToGrid::SnapObjectToVirtualGrid"
+              },
+              "parameters": [
+                "",
+                "UiSelectable1",
+                "32",
+                "32",
+                "0",
+                "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "UiSelectable2",
+                "=",
+                "UiBox.X() + 48",
+                "=",
+                "UiBox.Y() + 64"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "UiSelectable1",
+                "=",
+                "UiBox.X() + 96",
+                "=",
+                "UiBox.Y() + 64"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "UiSelectable1",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"An UiSelectable1 has been clicked\"",
+                "\"info\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "UiSelection",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "HasSelectionMarker",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Selection",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "UiSelectable2",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"An UiSelectable2 has been clicked\"",
+                "\"info\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "UiSelection",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "HasSelectionMarker",
+                "False"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Selection",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseX"
+              },
+              "parameters": [
+                "",
+                ">",
+                "0",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "HasSelectionMarker",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "CreateByName"
+              },
+              "parameters": [
+                "",
+                "Selection",
+                "\"Selection\" + ToString(Variable(UiSelection))",
+                "MouseX()",
+                "MouseY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSize"
+              },
+              "parameters": [
+                "Selection",
+                "31",
+                "31"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "Selection",
+                "=",
+                "1000"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseX"
+              },
+              "parameters": [
+                "",
+                ">",
+                "0",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Selection",
+                "=",
+                "MouseX()",
+                "=",
+                "MouseY()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SnapToGrid::SnapObjectToVirtualGrid"
+              },
+              "parameters": [
+                "",
+                "Selection",
+                "32",
+                "32",
+                "0",
+                "0",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "UiSelectable",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::AddObjectColorTween"
+              },
+              "parameters": [
+                "UiSelectable",
+                "Tween",
+                "\"Color\"",
+                "\"3;0;255\"",
+                "\"linear\"",
+                "500",
+                "300",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "UiSelectable",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::AddObjectColorTween"
+              },
+              "parameters": [
+                "UiSelectable",
+                "Tween",
+                "\"Color\"",
+                "\"255;255;255\"",
+                "\"linear\"",
+                "50",
+                "300",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
     }
   ],
   "layers": [
@@ -1145,5 +1733,10 @@
       "effects": []
     }
   ],
-  "behaviorsSharedData": []
+  "behaviorsSharedData": [
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
+    }
+  ]
 }
