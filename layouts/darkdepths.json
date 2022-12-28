@@ -18,12 +18,43 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.4802252001020673,
+    "zoomFactor": 0.5014865861275467,
     "windowMask": false
   },
   "objectsGroups": [],
   "variables": [],
-  "instances": [],
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 1089,
+      "layer": "",
+      "name": "TiledFloor",
+      "persistentUuid": "0a6d9d42-10e8-4f3a-afed-84a85d8023ed",
+      "width": 1926,
+      "x": 0,
+      "y": 0,
+      "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Target",
+      "persistentUuid": "5e51070d-9d2b-4430-93c3-34cc5765652f",
+      "width": 0,
+      "x": 103,
+      "y": 7,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
   "objects": [
     {
       "assetStoreId": "5c32aeab23e0c011e7885edd37b6ec5e2243ed060182105232b08349b20a3017",
@@ -49,8 +80,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 7,
+                    "y": 7
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -254,8 +285,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 16,
+                    "y": 16
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -586,6 +617,18 @@
       "variables": [],
       "effects": [],
       "behaviors": []
+    },
+    {
+      "assetStoreId": "",
+      "height": 32,
+      "name": "TiledFloor",
+      "tags": "",
+      "texture": "assets\\floor.png",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 32,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
     }
   ],
   "events": [
@@ -626,7 +669,7 @@
             "0",
             "0",
             "0",
-            "\"Blobk\"",
+            "\"Block\"",
             "\"Base Layer\"",
             "200",
             ""
@@ -654,6 +697,50 @@
             "ZoomLvl",
             "=",
             "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetSize"
+          },
+          "parameters": [
+            "Target",
+            "31",
+            "31"
+          ]
+        },
+        {
+          "type": {
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "Target",
+            "=",
+            "1000"
+          ]
+        },
+        {
+          "type": {
+            "value": "MettreXY"
+          },
+          "parameters": [
+            "Target",
+            "=",
+            "0",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "MettreXY"
+          },
+          "parameters": [
+            "TiledFloor",
+            "=",
+            "-16",
+            "=",
+            "-16"
           ]
         }
       ]
@@ -761,6 +848,88 @@
           ]
         }
       ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "MouseX"
+          },
+          "parameters": [
+            "",
+            ">",
+            "0",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "MettreXY"
+          },
+          "parameters": [
+            "Target",
+            "=",
+            "MouseX()",
+            "=",
+            "MouseY()"
+          ]
+        },
+        {
+          "type": {
+            "value": "SnapToGrid::SnapObjectToVirtualGrid"
+          },
+          "parameters": [
+            "",
+            "Target",
+            "32",
+            "32",
+            "0",
+            "0",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "Target",
+            "Block",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "MouseButtonPressed"
+          },
+          "parameters": [
+            "",
+            "Left"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Delete"
+          },
+          "parameters": [
+            "Block",
+            ""
+          ]
+        }
+      ]
     }
   ],
   "layers": [
@@ -784,6 +953,17 @@
           "width": 0
         }
       ],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 14,
+      "ambientLightColorG": 6059824,
+      "ambientLightColorR": 8079488,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "UILayer",
+      "visibility": true,
+      "cameras": [],
       "effects": []
     }
   ],
