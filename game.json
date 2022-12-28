@@ -1,5 +1,5 @@
 {
-  "firstLayout": "",
+  "firstLayout": "MainMenu",
   "gdVersion": {
     "build": 99,
     "major": 4,
@@ -69,6 +69,121 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Lucid Icons Pack/c19d99fdba386386d157f5303ed66d60e4ef416725bcabcccce0b57238aa2262_Cursor-3.png",
           "name": "Cursor-3.png"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Ruby.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Ruby.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 Pixel art RPG Items/Collectable items/dc2d5d7e2902a366ab5a787bf5e0e959bd2f742da4de888bf6a984b1473ee3f7_Ruby.png",
+          "name": "Ruby.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Sapphire Gem.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Sapphire Gem.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 Pixel art RPG Items/Collectable items/575ab6eff158c4373015328bfab704052d6a937731d599d3280f47f44916d43b_Sapphire Gem.png",
+          "name": "Sapphire Gem.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Emerald Gem.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Emerald Gem.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 Pixel art RPG Items/Collectable items/5a2190a1567ccd911f7b9cbb1880ff567dbc203555489d3b77406d9e7ace85f7_Emerald Gem.png",
+          "name": "Emerald Gem.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Hessonite Gemstone.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Hessonite Gemstone.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 Pixel art RPG Items/Collectable items/2a65b37984bd4695580c5027c58a217609e4835281364faf453e3d86fb3d4f53_Hessonite Gemstone.png",
+          "name": "Hessonite Gemstone.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/block.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\block.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/hellstone.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\hellstone.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/floor.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\floor.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Portal.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Portal.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/spawner.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\spawner.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/creep.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\creep.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/creep2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\creep2.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -80,6 +195,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/darkdepths"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/mainmenu"
     }
   ],
   "externalEvents": [],
