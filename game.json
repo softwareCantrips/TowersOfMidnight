@@ -238,6 +238,33 @@
         "name": "NewSprite-1-1.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Block1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Block1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Block2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Block2.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Block3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Block3.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
