@@ -1864,7 +1864,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2331,13 +2330,11 @@
           "actions": [
             {
               "type": {
-                "value": "ModVarObjet"
+                "value": "Delete"
               },
               "parameters": [
                 "Enemies",
-                "EnemieHP",
-                "=",
-                "0"
+                ""
               ]
             },
             {
