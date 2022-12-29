@@ -9,7 +9,7 @@
   "title": "",
   "v": 209,
   "uiSettings": {
-    "grid": false,
+    "grid": true,
     "gridType": "rectangular",
     "gridWidth": 32,
     "gridHeight": 32,
@@ -17,8 +17,8 @@
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": false,
-    "zoomFactor": 0.7733980419227724,
+    "snap": true,
+    "zoomFactor": 1.192742832602602,
     "windowMask": false
   },
   "objectsGroups": [
@@ -1094,8 +1094,8 @@
           "parameters": [
             "",
             "Portal",
-            "RandomInRange(32,990)",
-            "RandomInRange(32,490)",
+            "RandomInRange(96,926)",
+            "RandomInRange(96,426)",
             ""
           ]
         },
@@ -1200,32 +1200,71 @@
       ]
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Portal is spawning",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
         {
-          "type": {
-            "value": "CollisionNP"
-          },
-          "parameters": [
-            "Portal",
-            "Block",
-            "",
-            "",
-            ""
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Portal",
+                "Block",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Block",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Block",
+                "Portal",
+                "50",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Block",
+                ""
+              ]
+            }
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "Block",
-            ""
-          ]
-        }
-      ]
+      "parameters": []
     },
     {
       "type": "BuiltinCommonInstructions::Standard",
@@ -1584,6 +1623,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2027,6 +2067,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Spawner",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
