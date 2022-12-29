@@ -9,7 +9,7 @@
   "title": "",
   "v": 209,
   "uiSettings": {
-    "grid": true,
+    "grid": false,
     "gridType": "rectangular",
     "gridWidth": 32,
     "gridHeight": 32,
@@ -17,8 +17,8 @@
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": true,
-    "zoomFactor": 1.174315867046327,
+    "snap": false,
+    "zoomFactor": 1.124528726859952,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -71,21 +71,6 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "height": 23,
-      "layer": "",
-      "name": "TestSliderText",
-      "persistentUuid": "28fab334-f6ac-4ab7-a74b-525f0adc1fd6",
-      "width": 64,
-      "x": 768,
-      "y": 393,
-      "zOrder": 4,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
       "customSize": false,
       "height": 0,
       "layer": "",
@@ -98,12 +83,88 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 102,
+      "layer": "",
+      "name": "SaveButton",
+      "persistentUuid": "d3fc5eda-3d25-4870-807a-17e76447468e",
+      "width": 256,
+      "x": 896,
+      "y": 704,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 55,
+      "layer": "",
+      "name": "SaveButtonText",
+      "persistentUuid": "e6a0eba2-13c1-4b16-9ab9-7f6399325593",
+      "width": 183,
+      "x": 932,
+      "y": 727,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
     {
       "assetStoreId": "",
       "name": "BackToMenuButton",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "NewSprite-1-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "SaveButton",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -165,6 +226,33 @@
         }
       ],
       "string": "Menu",
+      "font": "",
+      "textAlignment": "center",
+      "characterSize": 48,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "SaveButtonText",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Save",
       "font": "",
       "textAlignment": "center",
       "characterSize": 48,
@@ -323,6 +411,91 @@
               "parameters": [
                 "",
                 "\"66;66;66\""
+              ]
+            },
+            {
+              "type": {
+                "value": "DraggableSliderControl::DraggableSliderControl::SetValue"
+              },
+              "parameters": [
+                "VolumeSlider",
+                "DraggableSliderControl",
+                "GlobalVariable(GameOptions.GameVolume) / 100",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "VolumeSlider",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "GameOptions.GameVolume",
+                "=",
+                "round((VolumeSlider.DraggableSliderControl::Value()) * 100)"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModGlobalVolume"
+              },
+              "parameters": [
+                "",
+                "=",
+                "GlobalVariable(GameOptions.GameVolume)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "DraggableSliderControl::DraggableSliderControl::IsBeingDragged"
+              },
+              "parameters": [
+                "VolumeSlider",
+                "DraggableSliderControl",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "ff4bf05320990a27ccb396af088267eba2a90522a28e6cb679620276bade876c_Laser-weapon 6.aac",
+                "",
+                "GlobalVariable(GameOptions.GameVolume)",
+                ""
               ]
             }
           ]
@@ -524,30 +697,197 @@
       "parameters": []
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Save Button",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
         {
-          "type": {
-            "value": "ModVarScene"
-          },
-          "parameters": [
-            "VolumeMultiplier",
-            "=",
-            "round((VolumeSlider.DraggableSliderControl::Value()) * 100)"
-          ]
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Hover over",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "SaveButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "SaveButton",
+                    "Tween",
+                    "\"tweenScale\"",
+                    "4",
+                    "4",
+                    "\"linear\"",
+                    "200",
+                    "",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "SaveButtonText",
+                    "Tween",
+                    "\"tweenText\"",
+                    "1.255",
+                    "1.255",
+                    "\"linear\"",
+                    "200",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "SaveButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "SaveButton",
+                    "Tween",
+                    "\"tweenScale\"",
+                    "3.1875",
+                    "3.1875",
+                    "\"linear\"",
+                    "200",
+                    "",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectScaleTween"
+                  },
+                  "parameters": [
+                    "SaveButtonText",
+                    "Tween",
+                    "\"tweenText\"",
+                    "1",
+                    "1",
+                    "\"linear\"",
+                    "200",
+                    "",
+                    "yes"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
         },
         {
-          "type": {
-            "value": "TextObject::String"
-          },
-          "parameters": [
-            "TestSliderText",
-            "=",
-            "ToString(Variable(VolumeMultiplier))"
-          ]
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Click",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "SaveButton",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "EcrireFichierTxt"
+                  },
+                  "parameters": [
+                    "\"GameOptions\"",
+                    "\"Settings\"",
+                    "GlobalVarToJSON(GameOptions)"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
         }
-      ]
+      ],
+      "parameters": []
     }
   ],
   "layers": [

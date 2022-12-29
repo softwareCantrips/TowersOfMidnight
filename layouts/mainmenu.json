@@ -542,6 +542,26 @@
                 "",
                 "\"66;66;66\""
               ]
+            },
+            {
+              "type": {
+                "value": "LireFichierTxt"
+              },
+              "parameters": [
+                "\"GameOptions\"",
+                "\"Settings\"",
+                "",
+                "TempVar"
+              ]
+            },
+            {
+              "type": {
+                "value": "JSONToGlobalVariableStructure"
+              },
+              "parameters": [
+                "VariableString(TempVar)",
+                "GameOptions"
+              ]
             }
           ]
         }
@@ -1122,6 +1142,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Exit Button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1257,6 +1278,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Click",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
