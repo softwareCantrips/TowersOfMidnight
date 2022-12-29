@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.3372975630068038,
+    "zoomFactor": 0.8671301880228123,
     "windowMask": false
   },
   "objectsGroups": [
@@ -173,6 +173,21 @@
       "x": 576,
       "y": 727,
       "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 1050,
+      "layer": "BackgroundPicture",
+      "name": "TowerBackground",
+      "persistentUuid": "9e956203-1515-4257-aed0-e84587a34b16",
+      "width": 1867,
+      "x": 21,
+      "y": 6,
+      "zOrder": 14,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -498,6 +513,47 @@
         "g": 0,
         "r": 0
       }
+    },
+    {
+      "assetStoreId": "",
+      "name": "TowerBackground",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\TowerBackground.webp",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "events": [
@@ -536,6 +592,17 @@
             },
             {
               "type": {
+                "value": "ZoomCamera"
+              },
+              "parameters": [
+                "",
+                "1.2",
+                "\"BackgroundPicture\"",
+                ""
+              ]
+            },
+            {
+              "type": {
                 "value": "SceneBackground"
               },
               "parameters": [
@@ -561,6 +628,48 @@
               "parameters": [
                 "VariableString(TempVar)",
                 "GameOptions"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Camera Movement Background",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "lerp(CameraX(), MouseX(), 0.05)",
+                "\"BackgroundPicture\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "lerp(CameraY(), MouseY(), 0.05)",
+                "\"BackgroundPicture\"",
+                ""
               ]
             }
           ]
@@ -1332,6 +1441,17 @@
     }
   ],
   "layers": [
+    {
+      "ambientLightColorB": 14,
+      "ambientLightColorG": 6059824,
+      "ambientLightColorR": 11321808,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "BackgroundPicture",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
+    },
     {
       "ambientLightColorB": 0,
       "ambientLightColorG": 0,

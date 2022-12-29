@@ -283,6 +283,24 @@
         "name": "assets\\LifeBar.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/TowerBackground.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\TowerBackground.jpg",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/TowerBackground.webp",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\TowerBackground.webp",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
