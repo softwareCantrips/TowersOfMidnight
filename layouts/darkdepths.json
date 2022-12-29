@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.9604504002041186,
+    "zoomFactor": 0.7733980419227626,
     "windowMask": false
   },
   "objectsGroups": [
@@ -837,11 +837,12 @@
       "effects": [],
       "behaviors": [
         {
+          "acceleration": 50,
+          "maxSpeed": 30,
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior",
           "angularMaxSpeed": 360,
           "rotateObject": true,
-          "acceleration": 400,
           "allowDiagonals": false,
           "angleOffset": 0,
           "cellHeight": 16,
@@ -849,7 +850,6 @@
           "extraBorder": 0,
           "gridOffsetX": 0,
           "gridOffsetY": 0,
-          "maxSpeed": 200,
           "smoothingMaxCellGap": 1
         }
       ],
@@ -863,7 +863,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "assets\\creep.png",
                   "points": [],
                   "originPoint": {
@@ -877,10 +877,29 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 5.098039150238037,
+                        "y": 11.803921699523926
+                      },
+                      {
+                        "x": 21.176469802856445,
+                        "y": 11.333333015441895
+                      },
+                      {
+                        "x": 21.72549057006836,
+                        "y": 20.27450942993164
+                      },
+                      {
+                        "x": 6.039215564727783,
+                        "y": 20.352941513061523
+                      }
+                    ]
+                  ]
                 },
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "assets\\creep2.png",
                   "points": [],
                   "originPoint": {
@@ -894,7 +913,26 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 5.098039150238037,
+                        "y": 11.803921699523926
+                      },
+                      {
+                        "x": 21.176469802856445,
+                        "y": 11.333333015441895
+                      },
+                      {
+                        "x": 21.72549057006836,
+                        "y": 20.27450942993164
+                      },
+                      {
+                        "x": 6.039215564727783,
+                        "y": 20.352941513061523
+                      }
+                    ]
+                  ]
                 }
               ]
             }
@@ -2532,12 +2570,12 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Tower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -2561,6 +2599,12 @@
                 ">",
                 "2"
               ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
             }
           ],
           "actions": [
@@ -2607,12 +2651,101 @@
             },
             {
               "type": {
-                "value": "LinkedObjects::LinkObjects"
+                "value": "HomingProjectile::LockOnTarget"
               },
               "parameters": [
                 "",
                 "Circle",
-                "Enemies"
+                "Enemies",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "StoneTower",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "StoneTower",
+                "\"Cooldown\"",
+                ">",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Enemies",
+                "StoneTower",
+                "80",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Circle",
+                "StoneTower.X()",
+                "StoneTower.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSize"
+              },
+              "parameters": [
+                "Circle",
+                "12",
+                "12"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "Circle",
+                "=",
+                "399"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "StoneTower",
+                "\"Cooldown\""
+              ]
+            },
+            {
+              "type": {
+                "value": "HomingProjectile::LockOnTarget"
+              },
+              "parameters": [
+                "",
+                "Circle",
+                "Enemies",
+                ""
               ]
             }
           ]
@@ -2625,7 +2758,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Give DMG (Test Application)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2687,6 +2819,100 @@
         }
       ],
       "parameters": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "HomingProjectile::MoveTowardsTarget"
+          },
+          "parameters": [
+            "",
+            "Circle",
+            "Enemies",
+            "720",
+            "200",
+            "20",
+            "250",
+            "2",
+            "no",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "Circle",
+            "Enemies",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ModVarObjet"
+          },
+          "parameters": [
+            "Enemies",
+            "EnemieHP",
+            "-",
+            "34"
+          ]
+        },
+        {
+          "type": {
+            "value": "Delete"
+          },
+          "parameters": [
+            "Circle",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "Vitesse"
+          },
+          "parameters": [
+            "Circle",
+            "=",
+            "0"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Delete"
+          },
+          "parameters": [
+            "Circle",
+            ""
+          ]
+        }
+      ]
     }
   ],
   "layers": [
