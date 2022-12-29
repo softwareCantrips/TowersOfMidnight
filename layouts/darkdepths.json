@@ -878,7 +878,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\creep.png",
                   "points": [],
                   "originPoint": {
@@ -892,29 +892,10 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 5.098039150238037,
-                        "y": 11.803921699523926
-                      },
-                      {
-                        "x": 21.176469802856445,
-                        "y": 11.333333015441895
-                      },
-                      {
-                        "x": 21.72549057006836,
-                        "y": 20.27450942993164
-                      },
-                      {
-                        "x": 6.039215564727783,
-                        "y": 20.352941513061523
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 },
                 {
-                  "hasCustomCollisionMask": true,
+                  "hasCustomCollisionMask": false,
                   "image": "assets\\creep2.png",
                   "points": [],
                   "originPoint": {
@@ -928,26 +909,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 5.098039150238037,
-                        "y": 11.803921699523926
-                      },
-                      {
-                        "x": 21.176469802856445,
-                        "y": 11.333333015441895
-                      },
-                      {
-                        "x": 21.72549057006836,
-                        "y": 20.27450942993164
-                      },
-                      {
-                        "x": 6.039215564727783,
-                        "y": 20.352941513061523
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -1605,7 +1567,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Move camera with middle mouse button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1647,7 +1608,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Wenn UiSelection 1 = Auswahlwerkzeug",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1657,10 +1617,9 @@
           "conditions": [
             {
               "type": {
-                "value": "CollisionNP"
+                "value": "SourisSurObjet"
               },
               "parameters": [
-                "Selection1",
                 "Block",
                 "",
                 "",
@@ -1747,7 +1706,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Wenn UiSelection2 = StoneTower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1757,10 +1715,9 @@
           "conditions": [
             {
               "type": {
-                "value": "CollisionNP"
+                "value": "SourisSurObjet"
               },
               "parameters": [
-                "Selection2",
                 "Block",
                 "",
                 "",
@@ -1864,7 +1821,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2317,13 +2273,12 @@
           "conditions": [
             {
               "type": {
-                "value": "CollisionNP"
+                "value": "Distance"
               },
               "parameters": [
                 "Enemies",
                 "Portal",
-                "",
-                "",
+                "16",
                 ""
               ]
             },
@@ -2656,6 +2611,34 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "Distance"
+              },
+              "parameters": [
+                "LifeBar",
+                "Enemies",
+                "50",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "LifeBar",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
@@ -2665,6 +2648,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Tower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2952,6 +2936,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Give DMG (Test Application)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
