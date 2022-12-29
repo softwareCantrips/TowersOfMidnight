@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.44036845014236664,
+    "zoomFactor": 0.7733980419227724,
     "windowMask": false
   },
   "objectsGroups": [
@@ -536,9 +536,9 @@
       "effects": [],
       "behaviors": [
         {
-          "impassable": true,
           "name": "PathfindingObstacle",
           "type": "PathfindingBehavior::PathfindingObstacleBehavior",
+          "impassable": true,
           "cost": 2
         }
       ],
@@ -1336,204 +1336,208 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Wenn UiSelection 1 = Auswahlwerkzeug",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
-      "events": [],
-      "parameters": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+      "events": [
         {
-          "type": {
-            "value": "CollisionNP"
-          },
-          "parameters": [
-            "Selection1",
-            "Block",
-            "",
-            "",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "MouseButtonReleased"
-          },
-          "parameters": [
-            "",
-            "Left"
-          ]
-        },
-        {
-          "type": {
-            "value": "VarScene"
-          },
-          "parameters": [
-            "UiSelection",
-            "=",
-            "1"
-          ]
-        },
-        {
-          "type": {
-            "inverted": true,
-            "value": "CollisionNP"
-          },
-          "parameters": [
-            "Selection1",
-            "Buildings",
-            "",
-            "",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "inverted": true,
-            "value": "CollisionPoint"
-          },
-          "parameters": [
-            "UiBox",
-            "MouseX(\"UILayer\")",
-            "MouseY(\"UILayer\")"
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Selection1",
+                "Block",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "UiSelection",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Selection1",
+                "Buildings",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "UiBox",
+                "MouseX(\"UILayer\")",
+                "MouseY(\"UILayer\")"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlayAnimation"
+              },
+              "parameters": [
+                "Block"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.4"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Block",
+                ""
+              ]
+            }
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "PlayAnimation"
-          },
-          "parameters": [
-            "Block"
-          ]
-        },
-        {
-          "type": {
-            "value": "Wait"
-          },
-          "parameters": [
-            "0.4"
-          ]
-        },
-        {
-          "type": {
-            "value": "Delete"
-          },
-          "parameters": [
-            "Block",
-            ""
-          ]
-        }
-      ]
+      "parameters": []
     },
     {
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Wenn UiSelection2 = StoneTower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
-      "events": [],
-      "parameters": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+      "events": [
         {
-          "type": {
-            "value": "CollisionNP"
-          },
-          "parameters": [
-            "Selection2",
-            "Block",
-            "",
-            "",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "MouseButtonReleased"
-          },
-          "parameters": [
-            "",
-            "Left"
-          ]
-        },
-        {
-          "type": {
-            "value": "VarScene"
-          },
-          "parameters": [
-            "UiSelection",
-            "=",
-            "2"
-          ]
-        },
-        {
-          "type": {
-            "inverted": true,
-            "value": "CollisionPoint"
-          },
-          "parameters": [
-            "UiBox",
-            "MouseX(\"UILayer\")",
-            "MouseY(\"UILayer\")"
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Selection2",
+                "Block",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "UiSelection",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "UiBox",
+                "MouseX(\"UILayer\")",
+                "MouseY(\"UILayer\")"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "StoneTower",
+                "Block.CenterX()",
+                "Block.CenterY()",
+                "\"Base Layer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SnapToGrid::SnapObjectToVirtualGrid"
+              },
+              "parameters": [
+                "",
+                "StoneTower",
+                "32",
+                "32",
+                "0",
+                "0",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"X = \" + ToString(Block.CenterX()) + \" Y = \" + ToString(Block.CenterY())",
+                "\"info\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "StoneTower",
+                "=",
+                "300"
+              ]
+            }
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "Create"
-          },
-          "parameters": [
-            "",
-            "StoneTower",
-            "Block.CenterX()",
-            "Block.CenterY()",
-            "\"Base Layer\""
-          ]
-        },
-        {
-          "type": {
-            "value": "SnapToGrid::SnapObjectToVirtualGrid"
-          },
-          "parameters": [
-            "",
-            "StoneTower",
-            "32",
-            "32",
-            "0",
-            "0",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "DebuggerTools::ConsoleLog"
-          },
-          "parameters": [
-            "\"X = \" + ToString(Block.CenterX()) + \" Y = \" + ToString(Block.CenterY())",
-            "\"info\"",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "ChangePlan"
-          },
-          "parameters": [
-            "StoneTower",
-            "=",
-            "300"
-          ]
-        }
-      ]
+      "parameters": []
     },
     {
       "colorB": 228,
@@ -1980,15 +1984,11 @@
       "parameters": []
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
-    },
-    {
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Spawner",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2149,6 +2149,48 @@
                     ""
                   ]
                 }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Move camera with middle mouse button",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonPressed"
+              },
+              "parameters": [
+                "",
+                "Middle"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DragCameraWithPointer::DragCameraWithPointer"
+              },
+              "parameters": [
+                "",
+                "0",
+                "\"\"",
+                "\"both\"",
+                "Middle",
+                ""
               ]
             }
           ]
