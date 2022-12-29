@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.57108722476498,
+    "zoomFactor": 1.0473785882640418,
     "windowMask": false
   },
   "objectsGroups": [
@@ -49,6 +49,14 @@
       "objects": [
         {
           "name": "StoneTower"
+        }
+      ]
+    },
+    {
+      "name": "Enemies",
+      "objects": [
+        {
+          "name": "Creep"
         }
       ]
     }
@@ -1245,6 +1253,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Portal is spawning",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1471,6 +1480,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Move camera with middle mouse button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1512,6 +1522,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Wenn UiSelection 1 = Auswahlwerkzeug",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1611,6 +1622,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Wenn UiSelection2 = StoneTower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1727,6 +1739,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2182,7 +2195,7 @@
                 "value": "CollisionNP"
               },
               "parameters": [
-                "Creep",
+                "Enemies",
                 "Portal",
                 "",
                 "",
@@ -2196,7 +2209,7 @@
                 "value": "Delete"
               },
               "parameters": [
-                "Creep",
+                "Enemies",
                 ""
               ]
             },
@@ -2223,7 +2236,7 @@
                 "value": "PathfindingBehavior::SetDestination"
               },
               "parameters": [
-                "Creep",
+                "Enemies",
                 "Pathfinding",
                 "",
                 "Portal.X()",
@@ -2235,7 +2248,7 @@
                 "value": "DebuggerTools::ConsoleLog"
               },
               "parameters": [
-                "\"Trying to move creep\"",
+                "\"Trying to move enemies\"",
                 "\"info\"",
                 ""
               ]
@@ -2279,11 +2292,12 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Create"
+                    "value": "CreateByName"
                   },
                   "parameters": [
                     "",
-                    "Creep",
+                    "Enemies",
+                    "\"Creep\"",
                     "Spawner.X()",
                     "Spawner.Y()",
                     ""
@@ -2304,7 +2318,7 @@
                     "value": "ChangePlan"
                   },
                   "parameters": [
-                    "Creep",
+                    "Enemies",
                     "=",
                     "299"
                   ]
@@ -2323,7 +2337,7 @@
                     "value": "SetSize"
                   },
                   "parameters": [
-                    "Creep",
+                    "Enemies",
                     "16",
                     "16"
                   ]
@@ -2334,7 +2348,7 @@
                   },
                   "parameters": [
                     "",
-                    "Creep",
+                    "Enemies",
                     "32",
                     "32",
                     "0",
