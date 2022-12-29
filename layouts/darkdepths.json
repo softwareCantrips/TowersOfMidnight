@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 1.0473785882640418,
+    "zoomFactor": 0.8433965451449427,
     "windowMask": false
   },
   "objectsGroups": [
@@ -149,6 +149,36 @@
       "x": 460,
       "y": 877,
       "zOrder": 1000,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "LifeBar",
+      "persistentUuid": "acd7e1c9-f800-4a43-8f6a-4eb6a7f61992",
+      "width": 0,
+      "x": 325,
+      "y": 844,
+      "zOrder": 1001,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "Hellstone",
+      "persistentUuid": "629290b8-d073-4a82-8796-57f42324965e",
+      "width": 0,
+      "x": 607,
+      "y": 606,
+      "zOrder": 1002,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -874,47 +904,6 @@
     },
     {
       "assetStoreId": "",
-      "name": "NewSprite",
-      "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "NewSprite",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "assetStoreId": "",
       "height": 32,
       "name": "TiledBlock",
       "tags": "",
@@ -1032,6 +1021,47 @@
                     "name": "origine",
                     "x": 50,
                     "y": 50
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "LifeBar",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "LifeBar",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\LifeBar.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -2206,11 +2236,13 @@
           "actions": [
             {
               "type": {
-                "value": "Delete"
+                "value": "ModVarObjet"
               },
               "parameters": [
                 "Enemies",
-                ""
+                "EnemieHP",
+                "=",
+                "0"
               ]
             },
             {
@@ -2315,6 +2347,49 @@
                 },
                 {
                   "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Enemies",
+                    "EnemieHP",
+                    "=",
+                    "100"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "\"Creep HP is set to: \" + ToString(Enemies.Variable(EnemieHP))",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "LifeBar",
+                    "Enemies.X() - 8",
+                    "Enemies.Y() - 18",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "LifeBar",
+                    "Enemies"
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ChangePlan"
                   },
                   "parameters": [
@@ -2359,6 +2434,95 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Enemies",
+          "conditions": [
+            {
+              "type": {
+                "value": "LinkedObjects::PickObjectsLinkedTo"
+              },
+              "parameters": [
+                "",
+                "LifeBar",
+                "Enemies",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "LifeBar",
+                "=",
+                "Enemies.X() - 8",
+                "=",
+                "Enemies.Y() - 18"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangeWidth"
+              },
+              "parameters": [
+                "LifeBar",
+                "=",
+                "(Enemies.Variable(EnemieHP) / 100) * 16"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Enemies",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "Enemies",
+                "EnemieHP",
+                "<=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "LinkedObjects::PickObjectsLinkedTo"
+              },
+              "parameters": [
+                "",
+                "LifeBar",
+                "Enemies",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemies",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "LifeBar",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
@@ -2368,6 +2532,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Tower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2381,7 +2546,7 @@
               },
               "parameters": [
                 "StoneTower",
-                "Creep",
+                "Enemies",
                 "400",
                 ""
               ]
@@ -2447,7 +2612,75 @@
               "parameters": [
                 "",
                 "Circle",
-                "Creep"
+                "Enemies"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "folded": true,
+      "name": "Give DMG (Test Application)",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Hellstone",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AjoutObjConcern"
+              },
+              "parameters": [
+                "",
+                "Enemies"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Enemies",
+                    "EnemieHP",
+                    "-",
+                    "10"
+                  ]
+                }
               ]
             }
           ]
