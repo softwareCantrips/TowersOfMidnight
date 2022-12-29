@@ -2879,13 +2879,12 @@
           "conditions": [
             {
               "type": {
-                "value": "CollisionNP"
+                "value": "Distance"
               },
               "parameters": [
                 "Circle",
                 "Enemies",
-                "",
-                "",
+                "2",
                 ""
               ]
             },
