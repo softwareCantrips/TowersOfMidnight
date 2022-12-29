@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 1.2455500692651063,
+    "zoomFactor": 0.403819649280324,
     "windowMask": false
   },
   "objectsGroups": [
@@ -93,8 +93,8 @@
       "name": "UiBox",
       "persistentUuid": "00f8c918-f99a-4757-a9fd-6fb5afb252c7",
       "width": 625,
-      "x": 1,
-      "y": 854,
+      "x": 46,
+      "y": 795,
       "zOrder": 3,
       "numberProperties": [],
       "stringProperties": [],
@@ -138,8 +138,8 @@
       "name": "ShowFPS",
       "persistentUuid": "25bd8afe-4442-41e3-8b20-377dd67aa755",
       "width": 115,
-      "x": 477,
-      "y": 991,
+      "x": 460,
+      "y": 877,
       "zOrder": 1000,
       "numberProperties": [],
       "stringProperties": [],
@@ -800,6 +800,7 @@
       "behaviors": [
         {
           "name": "Pathfinding",
+          "rotateObject": false,
           "type": "PathfindingBehavior::PathfindingBehavior",
           "acceleration": 400,
           "allowDiagonals": false,
@@ -811,7 +812,6 @@
           "gridOffsetX": 0,
           "gridOffsetY": 0,
           "maxSpeed": 200,
-          "rotateObject": true,
           "smoothingMaxCellGap": 1
         }
       ],
@@ -1262,6 +1262,61 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Portal",
+                "Spawner",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Spawner",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Spawner",
+                "Portal",
+                "100",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Spawner",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
@@ -1375,7 +1430,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Move camera with middle mouse button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1623,7 +1677,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2067,7 +2120,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Spawner",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2104,7 +2156,7 @@
               },
               "parameters": [
                 "",
-                "0.2",
+                "0.0",
                 "0.1",
                 "0.1",
                 ""
