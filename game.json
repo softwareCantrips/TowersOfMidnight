@@ -178,15 +178,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "NewSprite-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "NewSprite-1.png",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
         "file": "assets/block.png",
         "kind": "image",
         "metadata": "",
@@ -218,24 +209,6 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\Cursor-3-1.png",
-        "smoothed": false,
-        "userAdded": true
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "NewSprite-1-0.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "NewSprite-1-0.png",
-        "smoothed": false,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
-        "file": "NewSprite-1-1.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "NewSprite-1-1.png",
         "smoothed": false,
         "userAdded": true
       },
@@ -278,6 +251,19 @@
         "origin": {
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Arcade/Sound effects/Laser-weapon/ff4bf05320990a27ccb396af088267eba2a90522a28e6cb679620276bade876c_Laser-weapon 6.aac",
           "name": "gdevelop-asset-store"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Circle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Circle.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Xelu Free Controller and Key Prompts/Console Inputs/Amazon Luna/f64f5d621e836f15ddeca14a88a8f13e0a6bd7294464cc03ab0803ef60d56e63_Circle.png",
+          "name": "Circle.png"
         }
       },
       {

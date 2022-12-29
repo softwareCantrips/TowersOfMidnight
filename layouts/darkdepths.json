@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.403819649280324,
+    "zoomFactor": 0.57108722476498,
     "windowMask": false
   },
   "objectsGroups": [
@@ -997,6 +997,47 @@
         "g": 0,
         "r": 0
       }
+    },
+    {
+      "assetStoreId": "fffeacf455b897592551e40df452335266c2c4bd423255616c7c1d48788648ab",
+      "name": "Circle",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Circle.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 50,
+                    "y": 50
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "events": [
@@ -1666,6 +1707,15 @@
                 "=",
                 "300"
               ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "StoneTower",
+                "\"Cooldown\""
+              ]
             }
           ]
         }
@@ -2292,6 +2342,98 @@
                     ""
                   ]
                 }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Tower",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "StoneTower",
+                "Creep",
+                "400",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "CompareObjectTimer"
+              },
+              "parameters": [
+                "StoneTower",
+                "\"Cooldown\"",
+                ">",
+                "2"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Circle",
+                "StoneTower.X()",
+                "StoneTower.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "Circle",
+                "=",
+                "399"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSize"
+              },
+              "parameters": [
+                "Circle",
+                "10",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetObjectTimer"
+              },
+              "parameters": [
+                "StoneTower",
+                "\"Cooldown\""
+              ]
+            },
+            {
+              "type": {
+                "value": "LinkedObjects::LinkObjects"
+              },
+              "parameters": [
+                "",
+                "Circle",
+                "Creep"
               ]
             }
           ]

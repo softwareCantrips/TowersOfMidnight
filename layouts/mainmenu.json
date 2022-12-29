@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.2263072722449926,
+    "zoomFactor": 1.660733425686831,
     "windowMask": false
   },
   "objectsGroups": [
@@ -204,7 +204,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets\\NewSprite-1-1.png",
+                  "image": "NewSprite-1-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -250,7 +250,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets\\NewSprite-1-1.png",
+                  "image": "NewSprite-1-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -296,7 +296,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets\\NewSprite-1-1.png",
+                  "image": "NewSprite-1-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -342,7 +342,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets\\NewSprite-1-1.png",
+                  "image": "NewSprite-1-1.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
