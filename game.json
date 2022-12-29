@@ -274,6 +274,15 @@
         "name": "assets\\NewSprite-1-1.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/button.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\button.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []

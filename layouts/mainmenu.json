@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 1.660733425686831,
+    "zoomFactor": 1.3372975630068038,
     "windowMask": false
   },
   "objectsGroups": [
@@ -204,7 +204,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1-1.png",
+                  "image": "assets\\button.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -250,7 +250,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1-1.png",
+                  "image": "assets\\button.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -296,7 +296,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1-1.png",
+                  "image": "assets\\button.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -342,7 +342,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1-1.png",
+                  "image": "assets\\button.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",

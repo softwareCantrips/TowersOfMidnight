@@ -141,7 +141,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1-1.png",
+                  "image": "assets\\button.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -187,7 +187,7 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1-1.png",
+                  "image": "assets\\button.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",

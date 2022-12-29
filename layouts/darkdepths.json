@@ -800,8 +800,8 @@
       "behaviors": [
         {
           "name": "Pathfinding",
-          "rotateObject": false,
           "type": "PathfindingBehavior::PathfindingBehavior",
+          "rotateObject": false,
           "acceleration": 400,
           "allowDiagonals": false,
           "angleOffset": 0,
