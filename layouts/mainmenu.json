@@ -9,7 +9,7 @@
   "title": "",
   "v": 209,
   "uiSettings": {
-    "grid": true,
+    "grid": false,
     "gridType": "rectangular",
     "gridWidth": 32,
     "gridHeight": 32,
@@ -17,8 +17,8 @@
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": true,
-    "zoomFactor": 0.8671301880228123,
+    "snap": false,
+    "zoomFactor": 0.4937390014874062,
     "windowMask": false
   },
   "objectsGroups": [
@@ -180,14 +180,74 @@
     {
       "angle": 0,
       "customSize": true,
-      "height": 1050,
-      "layer": "BackgroundPicture",
-      "name": "TowerBackground",
-      "persistentUuid": "9e956203-1515-4257-aed0-e84587a34b16",
-      "width": 1867,
-      "x": 21,
-      "y": 6,
+      "height": 1130,
+      "layer": "BackgroundPictureSecond",
+      "name": "JustBackground",
+      "persistentUuid": "81645005-e83f-4a41-8dee-af6c6be2efda",
+      "width": 2009,
+      "x": -43,
+      "y": -28,
       "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 1130,
+      "layer": "BackgroundPictureFirst",
+      "name": "TowerWithGrassBackground",
+      "persistentUuid": "920648cd-95e0-4f6b-a523-4b1eda65274e",
+      "width": 2009,
+      "x": -43,
+      "y": -28,
+      "zOrder": 15,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 1130,
+      "layer": "BackgroundPictureFirst",
+      "name": "TowerWithGrassBackground",
+      "persistentUuid": "074c53af-20ae-4e07-bba6-ebd20aadd8e9",
+      "width": 2009,
+      "x": -43,
+      "y": -28,
+      "zOrder": 15,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 1130,
+      "layer": "BackgroundPictureFirst",
+      "name": "TowerWithGrassBackground",
+      "persistentUuid": "95697ab6-0870-4269-9f45-7259f2238eee",
+      "width": 2009,
+      "x": -43,
+      "y": -28,
+      "zOrder": 15,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 1130,
+      "layer": "BackgroundPictureFirst",
+      "name": "TowerWithGrassBackground",
+      "persistentUuid": "491af35b-ab9c-476c-9464-e3a8dd5a0d44",
+      "width": 2009,
+      "x": -43,
+      "y": -28,
+      "zOrder": 15,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -516,7 +576,7 @@
     },
     {
       "assetStoreId": "",
-      "name": "TowerBackground",
+      "name": "JustBackground",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -525,7 +585,7 @@
       "behaviors": [],
       "animations": [
         {
-          "name": "",
+          "name": "JustBackground",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -534,7 +594,48 @@
               "sprites": [
                 {
                   "hasCustomCollisionMask": false,
-                  "image": "assets\\TowerBackground.webp",
+                  "image": "assets\\JustBackground-1-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "TowerWithGrassBackground",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "TowerAndGrassBackground",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\TowerAndGrassBackground.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -629,6 +730,16 @@
                 "VariableString(TempVar)",
                 "GameOptions"
               ]
+            },
+            {
+              "type": {
+                "value": "SetFullScreen"
+              },
+              "parameters": [
+                "",
+                "yes",
+                ""
+              ]
             }
           ]
         }
@@ -640,6 +751,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Camera Movement Background",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -655,8 +767,8 @@
               "parameters": [
                 "",
                 "=",
-                "lerp(CameraX(), MouseX(), 0.05)",
-                "\"BackgroundPicture\"",
+                "lerp(CameraX(), MouseX(), 0.07)",
+                "\"BackgroundPictureFirst\"",
                 ""
               ]
             },
@@ -667,8 +779,32 @@
               "parameters": [
                 "",
                 "=",
-                "lerp(CameraY(), MouseY(), 0.05)",
-                "\"BackgroundPicture\"",
+                "lerp(CameraY(), MouseY(), 0.07)",
+                "\"BackgroundPictureFirst\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterX"
+              },
+              "parameters": [
+                "",
+                "=",
+                "lerp(CameraX(), MouseX(), 0.04)",
+                "\"BackgroundPictureSecond\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCameraCenterY"
+              },
+              "parameters": [
+                "",
+                "=",
+                "lerp(CameraY(), MouseY(), 0.04)",
+                "\"BackgroundPictureSecond\"",
                 ""
               ]
             }
@@ -1442,12 +1578,23 @@
   ],
   "layers": [
     {
+      "ambientLightColorB": 0,
+      "ambientLightColorG": 6059824,
+      "ambientLightColorR": 10313792,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "BackgroundPictureSecond",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
+    },
+    {
       "ambientLightColorB": 14,
       "ambientLightColorG": 6059824,
       "ambientLightColorR": 11321808,
       "followBaseLayerCamera": false,
       "isLightingLayer": false,
-      "name": "BackgroundPicture",
+      "name": "BackgroundPictureFirst",
       "visibility": true,
       "cameras": [],
       "effects": []

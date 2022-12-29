@@ -286,10 +286,19 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "assets/TowerBackground.webp",
+        "file": "assets/JustBackground-1-1.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets\\TowerBackground.webp",
+        "name": "assets\\JustBackground-1-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/TowerAndGrassBackground.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\TowerAndGrassBackground.png",
         "smoothed": false,
         "userAdded": true
       }
