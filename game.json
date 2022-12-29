@@ -279,6 +279,15 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Arcade/Sound effects/Laser-weapon/ff4bf05320990a27ccb396af088267eba2a90522a28e6cb679620276bade876c_Laser-weapon 6.aac",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/NewSprite-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\NewSprite-1-1.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
