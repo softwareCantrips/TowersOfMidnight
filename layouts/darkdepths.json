@@ -1337,6 +1337,47 @@
       "colorR": 74,
       "creationTime": 0,
       "folded": true,
+      "name": "Move camera with middle mouse button",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonPressed"
+              },
+              "parameters": [
+                "",
+                "Middle"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DragCameraWithPointer::DragCameraWithPointer"
+              },
+              "parameters": [
+                "",
+                "0",
+                "\"\"",
+                "\"both\"",
+                "Middle",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
       "name": "Wenn UiSelection 1 = Auswahlwerkzeug",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1436,7 +1477,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Wenn UiSelection2 = StoneTower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1544,7 +1584,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1988,7 +2027,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Spawner",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2016,6 +2054,18 @@
               },
               "parameters": [
                 "Creep",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "CameraShake::ShakeCamera"
+              },
+              "parameters": [
+                "",
+                "0.2",
+                "0.1",
+                "0.1",
                 ""
               ]
             }
@@ -2149,48 +2199,6 @@
                     ""
                   ]
                 }
-              ]
-            }
-          ]
-        }
-      ],
-      "parameters": []
-    },
-    {
-      "colorB": 228,
-      "colorG": 176,
-      "colorR": 74,
-      "creationTime": 0,
-      "folded": true,
-      "name": "Move camera with middle mouse button",
-      "source": "",
-      "type": "BuiltinCommonInstructions::Group",
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "MouseButtonPressed"
-              },
-              "parameters": [
-                "",
-                "Middle"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "DragCameraWithPointer::DragCameraWithPointer"
-              },
-              "parameters": [
-                "",
-                "0",
-                "\"\"",
-                "\"both\"",
-                "Middle",
-                ""
               ]
             }
           ]
