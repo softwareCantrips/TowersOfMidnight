@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 1.0473785882640327,
+    "zoomFactor": 0.9604504002041186,
     "windowMask": false
   },
   "objectsGroups": [
@@ -837,10 +837,10 @@
       "effects": [],
       "behaviors": [
         {
-          "angularMaxSpeed": 360,
           "name": "Pathfinding",
-          "rotateObject": true,
           "type": "PathfindingBehavior::PathfindingBehavior",
+          "angularMaxSpeed": 360,
+          "rotateObject": true,
           "acceleration": 400,
           "allowDiagonals": false,
           "angleOffset": 0,
