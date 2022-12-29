@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.7733980419227626,
+    "zoomFactor": 0.7406085022310905,
     "windowMask": false
   },
   "objectsGroups": [
@@ -179,6 +179,21 @@
       "x": 607,
       "y": 606,
       "zOrder": 1002,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 34,
+      "layer": "UILayer",
+      "name": "Score",
+      "persistentUuid": "08c155e8-b4aa-47f4-b976-a19d89ce36d3",
+      "width": 156,
+      "x": 303,
+      "y": 967,
+      "zOrder": 1003,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1114,6 +1129,28 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Score",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "0",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 30,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
     }
   ],
   "events": [
@@ -1248,6 +1285,26 @@
             "Portal",
             "30",
             "30"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarScene"
+          },
+          "parameters": [
+            "Score",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextObject::String"
+          },
+          "parameters": [
+            "Score",
+            "=",
+            "\"Score : \" + ToString(Variable(Score))"
           ]
         }
       ],
@@ -2558,6 +2615,26 @@
               "parameters": [
                 "LifeBar",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Score",
+                "+",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "Score",
+                "=",
+                "\"Score : \" + ToString(Variable(Score))"
               ]
             }
           ]
