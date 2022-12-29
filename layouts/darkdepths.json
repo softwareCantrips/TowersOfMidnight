@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 1.0029731722550774,
+    "zoomFactor": 1.1421744495299473,
     "windowMask": false
   },
   "objectsGroups": [
@@ -2329,6 +2329,45 @@
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Distance"
+              },
+              "parameters": [
+                "Enemies",
+                "Portal",
+                "16",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemies",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "CameraShake::ShakeCamera"
+              },
+              "parameters": [
+                "",
+                "0.0",
+                "0.1",
+                "0.1",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
             {
@@ -2432,28 +2471,6 @@
                     "\"Creep HP is set to: \" + ToString(Enemies.Variable(EnemieHP))",
                     "",
                     ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "LifeBar",
-                    "Enemies.X() - 8",
-                    "Enemies.Y() - 18",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "LinkedObjects::LinkObjects"
-                  },
-                  "parameters": [
-                    "",
-                    "LifeBar",
-                    "Enemies"
                   ]
                 },
                 {
@@ -2648,7 +2665,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Tower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2753,7 +2769,7 @@
                 "StoneTower",
                 "\"Cooldown\"",
                 ">",
-                "2"
+                "1"
               ]
             },
             {
@@ -2763,7 +2779,7 @@
               "parameters": [
                 "Enemies",
                 "StoneTower",
-                "80",
+                "120",
                 ""
               ]
             }
@@ -2868,7 +2884,7 @@
               "parameters": [
                 "Circle",
                 "Enemies",
-                "2",
+                "16",
                 ""
               ]
             },
@@ -2898,6 +2914,65 @@
               "parameters": [
                 "Circle",
                 ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "LifeBar",
+                    "Enemies",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "LifeBar",
+                    "Enemies.X() - 8",
+                    "Enemies.Y() - 18",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeWidth"
+                  },
+                  "parameters": [
+                    "LifeBar",
+                    "=",
+                    "(Enemies.Variable(EnemieHP) / 100) * 16"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "LinkedObjects::LinkObjects"
+                  },
+                  "parameters": [
+                    "",
+                    "LifeBar",
+                    "Enemies"
+                  ]
+                }
               ]
             }
           ]
