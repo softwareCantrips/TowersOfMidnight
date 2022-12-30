@@ -364,6 +364,15 @@
         "name": "assets\\BugCreep7.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Block-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Block-1.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
