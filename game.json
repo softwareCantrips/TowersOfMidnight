@@ -301,6 +301,69 @@
         "name": "assets\\TowerAndGrassBackground.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/BugCreep1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\BugCreep1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/BugCreep2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\BugCreep2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/BugCreep3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\BugCreep3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/BugCreep4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\BugCreep4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/BugCreep5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\BugCreep5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/BugCreep6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\BugCreep6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/BugCreep7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\BugCreep7.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
