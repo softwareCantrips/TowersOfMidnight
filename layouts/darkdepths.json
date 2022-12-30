@@ -1187,6 +1187,8 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "Pathfinding",
+          "type": "PathfindingBehavior::PathfindingBehavior",
           "acceleration": 50,
           "allowDiagonals": false,
           "angleOffset": 0,
@@ -1197,10 +1199,8 @@
           "gridOffsetX": 0,
           "gridOffsetY": 0,
           "maxSpeed": 30,
-          "name": "Pathfinding",
           "rotateObject": true,
-          "smoothingMaxCellGap": 1,
-          "type": "PathfindingBehavior::PathfindingBehavior"
+          "smoothingMaxCellGap": 1
         },
         {
           "name": "Tween",
@@ -3298,7 +3298,7 @@
                 "",
                 "Circle",
                 "Enemies",
-                "1080",
+                "720",
                 "200",
                 "0",
                 "200",
@@ -3323,12 +3323,6 @@
                 "",
                 ""
               ]
-            },
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
             }
           ],
           "actions": [
