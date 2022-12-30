@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.7406085022310899,
+    "zoomFactor": 0.9197304541837209,
     "windowMask": false
   },
   "objectsGroups": [
@@ -1588,7 +1588,7 @@
           "parameters": [
             "HitPoints",
             "=",
-            "5"
+            "500"
           ]
         },
         {
@@ -1706,6 +1706,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Portal is spawning",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1934,6 +1935,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Move camera with middle mouse button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1975,6 +1977,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Wenn UiSelection 1 = Auswahlwerkzeug",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2073,6 +2076,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Wenn UiSelection2 = StoneTower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2188,6 +2192,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2645,7 +2650,7 @@
               "parameters": [
                 "Enemies",
                 "Portal",
-                "16",
+                "18",
                 ""
               ]
             },
@@ -2724,7 +2729,7 @@
               "parameters": [
                 "Enemies",
                 "Portal",
-                "16",
+                "8",
                 ""
               ]
             }
@@ -2841,22 +2846,9 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": true,
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "Spawner",
-                "Block",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Spawner",
+          "conditions": [],
           "actions": [],
           "events": [
             {
@@ -2864,103 +2856,124 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "CompareObjectTimer"
+                    "inverted": true,
+                    "value": "CollisionNP"
                   },
                   "parameters": [
                     "Spawner",
-                    "\"spawnTimer\"",
-                    ">",
-                    "1"
+                    "Block",
+                    "",
+                    "",
+                    ""
                   ]
                 }
               ],
-              "actions": [
+              "actions": [],
+              "events": [
                 {
-                  "type": {
-                    "value": "CreateByName"
-                  },
-                  "parameters": [
-                    "",
-                    "Enemies",
-                    "\"BugCreep\"",
-                    "Spawner.X() + RandomInRange(0,8)",
-                    "Spawner.Y() + RandomInRange(0,8)",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "DebuggerTools::ConsoleLog"
-                  },
-                  "parameters": [
-                    "\"Creep x = \" +  ToString(Spawner.X()) + \" Creep y = \" + ToString(Spawner.Y())",
-                    "\"info\"",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ModVarObjet"
-                  },
-                  "parameters": [
-                    "Enemies",
-                    "EnemieHP",
-                    "=",
-                    "100"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "DebuggerTools::ConsoleLog"
-                  },
-                  "parameters": [
-                    "\"Creep HP is set to: \" + ToString(Enemies.Variable(EnemieHP))",
-                    "",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ChangePlan"
-                  },
-                  "parameters": [
-                    "Enemies",
-                    "=",
-                    "299"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ResetObjectTimer"
-                  },
-                  "parameters": [
-                    "Spawner",
-                    "\"spawnTimer\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetSize"
-                  },
-                  "parameters": [
-                    "Enemies",
-                    "10",
-                    "10"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Tween::AddObjectColorTween"
-                  },
-                  "parameters": [
-                    "Enemies",
-                    "Tween",
-                    "\"ColorChange\"",
-                    "ToString(RandomInRange(0,127)) + \";\" + ToString(RandomInRange(0,255)) + \";\" + ToString(RandomInRange(0,127))",
-                    "\"linear\"",
-                    "1000",
-                    "",
-                    ""
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CompareObjectTimer"
+                      },
+                      "parameters": [
+                        "Spawner",
+                        "\"spawnTimer\"",
+                        ">",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "CreateByName"
+                      },
+                      "parameters": [
+                        "",
+                        "Enemies",
+                        "\"BugCreep\"",
+                        "Spawner.X() + RandomInRange(0,8)",
+                        "Spawner.Y() + RandomInRange(0,8)",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DebuggerTools::ConsoleLog"
+                      },
+                      "parameters": [
+                        "\"Creep x = \" +  ToString(Spawner.X()) + \" Creep y = \" + ToString(Spawner.Y())",
+                        "\"info\"",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Enemies",
+                        "EnemieHP",
+                        "=",
+                        "100"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DebuggerTools::ConsoleLog"
+                      },
+                      "parameters": [
+                        "\"Creep HP is set to: \" + ToString(Enemies.Variable(EnemieHP))",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Enemies",
+                        "=",
+                        "299"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResetObjectTimer"
+                      },
+                      "parameters": [
+                        "Spawner",
+                        "\"spawnTimer\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSize"
+                      },
+                      "parameters": [
+                        "Enemies",
+                        "10",
+                        "10"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::AddObjectColorTween"
+                      },
+                      "parameters": [
+                        "Enemies",
+                        "Tween",
+                        "\"ColorChange\"",
+                        "ToString(RandomInRange(0,127)) + \";\" + ToString(RandomInRange(0,255)) + \";\" + ToString(RandomInRange(0,127))",
+                        "\"linear\"",
+                        "1000",
+                        "",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
@@ -3112,6 +3125,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Tower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3453,6 +3467,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Give DMG (Test Application)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3520,6 +3535,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Main Menu Button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3697,6 +3713,53 @@
               "parameters": [
                 "",
                 "\"MainMenu\"",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "disabled": true,
+      "folded": true,
+      "name": "Destroy all \"Blocks\", to get all Spawners",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "AjoutObjConcern"
+              },
+              "parameters": [
+                "",
+                "Block"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Block",
                 ""
               ]
             }
