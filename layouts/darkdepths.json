@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 1.1421744495299473,
+    "zoomFactor": 0.8076392985606382,
     "windowMask": false
   },
   "objectsGroups": [
@@ -148,9 +148,9 @@
       "layer": "UILayer",
       "name": "ShowFPS",
       "persistentUuid": "25bd8afe-4442-41e3-8b20-377dd67aa755",
-      "width": 115,
-      "x": 460,
-      "y": 877,
+      "width": 160,
+      "x": 360,
+      "y": 834,
       "zOrder": 1000,
       "numberProperties": [],
       "stringProperties": [],
@@ -194,9 +194,69 @@
       "name": "Score",
       "persistentUuid": "08c155e8-b4aa-47f4-b976-a19d89ce36d3",
       "width": 156,
-      "x": 303,
-      "y": 967,
+      "x": 80,
+      "y": 926,
       "zOrder": 1003,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "name": "HitPoints",
+      "persistentUuid": "1287f247-a982-4be9-8374-3fac762ef288",
+      "width": 0,
+      "x": 517,
+      "y": 959,
+      "zOrder": 1004,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "HitPoints",
+      "persistentUuid": "b6dc6e73-41c6-44c3-999b-f7ebad927d78",
+      "width": 0,
+      "x": 80,
+      "y": 968,
+      "zOrder": 1005,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 74,
+      "layer": "UILayer",
+      "name": "MenuButton",
+      "persistentUuid": "c83ec38e-7d88-4298-bba9-f92afc55960d",
+      "width": 184,
+      "x": 354,
+      "y": 894,
+      "zOrder": 1006,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "MenuButtonText",
+      "persistentUuid": "d302ac72-cd8a-4598-b8da-66a230c673e0",
+      "width": 0,
+      "x": 380,
+      "y": 906,
+      "zOrder": 1007,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1276,6 +1336,101 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "HitPoints",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "HP: 99",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 30,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "MenuButton",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "NewSprite",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\button.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "MenuButtonText",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Menu",
+      "font": "",
+      "textAlignment": "center",
+      "characterSize": 48,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
     }
   ],
   "events": [
@@ -1424,12 +1579,32 @@
         },
         {
           "type": {
+            "value": "ModVarScene"
+          },
+          "parameters": [
+            "HitPoints",
+            "=",
+            "5"
+          ]
+        },
+        {
+          "type": {
             "value": "TextObject::String"
           },
           "parameters": [
             "Score",
             "=",
             "\"Score : \" + ToString(Variable(Score))"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextObject::String"
+          },
+          "parameters": [
+            "HitPoints",
+            "=",
+            "\"HP : \" + ToString(Variable(HitPoints))"
           ]
         },
         {
@@ -2551,6 +2726,53 @@
                 "0.1",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "HitPoints",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HitPoints",
+                "=",
+                "\"HP : \" + ToString(Variable(HitPoints))"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "HitPoints",
+                "<",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"MainMenu\"",
+                ""
+              ]
             }
           ]
         },
@@ -3256,6 +3478,196 @@
                     "10"
                   ]
                 }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Main Menu Button",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Hover",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "MenuButton",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::AddObjectScaleTween"
+              },
+              "parameters": [
+                "MenuButton",
+                "Tween",
+                "\"tweenScale\"",
+                "4",
+                "4",
+                "\"linear\"",
+                "200",
+                "",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectScaleTween"
+              },
+              "parameters": [
+                "MenuButtonText",
+                "Tween",
+                "\"tweenText\"",
+                "1.255",
+                "1.255",
+                "\"linear\"",
+                "200",
+                "",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "MenuButton",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::AddObjectScaleTween"
+              },
+              "parameters": [
+                "MenuButton",
+                "Tween",
+                "\"tweenScale\"",
+                "3.1875",
+                "3.1875",
+                "\"linear\"",
+                "200",
+                "",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectScaleTween"
+              },
+              "parameters": [
+                "MenuButtonText",
+                "Tween",
+                "\"tweenText\"",
+                "1",
+                "1",
+                "\"linear\"",
+                "200",
+                "",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Click",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "MenuButton",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"MainMenu\"",
+                ""
               ]
             }
           ]
