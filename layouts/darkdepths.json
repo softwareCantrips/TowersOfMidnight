@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.8076392985606382,
+    "zoomFactor": 0.7406085022310899,
     "windowMask": false
   },
   "objectsGroups": [
@@ -2802,7 +2802,19 @@
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
+          "conditions": [
+            {
+              "type": {
+                "value": "PathfindingBehavior::Speed"
+              },
+              "parameters": [
+                "Enemies",
+                "Pathfinding",
+                "=",
+                "0"
+              ]
+            }
+          ],
           "actions": [
             {
               "type": {
