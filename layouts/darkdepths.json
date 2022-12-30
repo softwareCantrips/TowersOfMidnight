@@ -2687,6 +2687,26 @@
                 "0.1",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "HitPoints",
+                "=",
+                "\"HP : \" + ToString(Variable(HitPoints))"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "HitPoints",
+                "-",
+                "1"
+              ]
             }
           ]
         },
