@@ -2806,46 +2806,6 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "PathfindingBehavior::Speed"
-              },
-              "parameters": [
-                "Enemies",
-                "Pathfinding",
-                "=",
-                "0"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "PathfindingBehavior::SetDestination"
-              },
-              "parameters": [
-                "Enemies",
-                "Pathfinding",
-                "",
-                "Portal.X()",
-                "Portal.Y()"
-              ]
-            },
-            {
-              "type": {
-                "value": "DebuggerTools::ConsoleLog"
-              },
-              "parameters": [
-                "\"Trying to move enemies\"",
-                "\"info\"",
-                ""
-              ]
-            }
-          ]
-        },
-        {
           "type": "BuiltinCommonInstructions::ForEach",
           "object": "Spawner",
           "conditions": [],
@@ -3112,6 +3072,72 @@
               },
               "parameters": [
                 "LifeBar",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PathfindingBehavior::Speed"
+              },
+              "parameters": [
+                "Enemies",
+                "Pathfinding",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PathfindingBehavior::SetDestination"
+              },
+              "parameters": [
+                "Enemies",
+                "Pathfinding",
+                "",
+                "Portal.X()",
+                "Portal.Y()"
+              ]
+            },
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"Trying to move enemies\"",
+                "\"info\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "PathfindingBehavior::PathFound"
+              },
+              "parameters": [
+                "Enemies",
+                "Pathfinding"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Enemies",
                 ""
               ]
             }
