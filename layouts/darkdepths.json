@@ -1201,6 +1201,10 @@
           "rotateObject": true,
           "smoothingMaxCellGap": 1,
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
         }
       ],
       "animations": [
@@ -1702,12 +1706,12 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Portal is spawning",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1763,6 +1767,7 @@
           ]
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1929,7 +1934,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Move camera with middle mouse button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2867,8 +2871,8 @@
                     "",
                     "Enemies",
                     "\"BugCreep\"",
-                    "Spawner.X()",
-                    "Spawner.Y()",
+                    "Spawner.X() + RandomInRange(0,8)",
+                    "Spawner.Y() + RandomInRange(0,8)",
                     ""
                   ]
                 },
@@ -2928,21 +2932,22 @@
                   },
                   "parameters": [
                     "Enemies",
-                    "18",
-                    "18"
+                    "10",
+                    "10"
                   ]
                 },
                 {
                   "type": {
-                    "value": "SnapToGrid::SnapObjectToVirtualGrid"
+                    "value": "Tween::AddObjectColorTween"
                   },
                   "parameters": [
-                    "",
                     "Enemies",
-                    "32",
-                    "32",
-                    "0",
-                    "0",
+                    "Tween",
+                    "\"ColorChange\"",
+                    "ToString(RandomInRange(0,127)) + \";\" + ToString(RandomInRange(0,255)) + \";\" + ToString(RandomInRange(0,127))",
+                    "\"linear\"",
+                    "1000",
+                    "",
                     ""
                   ]
                 }
@@ -3442,7 +3447,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Give DMG (Test Application)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
