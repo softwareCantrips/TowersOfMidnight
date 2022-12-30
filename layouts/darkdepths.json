@@ -2894,8 +2894,8 @@
                         "",
                         "Enemies",
                         "\"BugCreep\"",
-                        "Spawner.X() + RandomInRange(0,8)",
-                        "Spawner.Y() + RandomInRange(0,8)",
+                        "Spawner.CenterX() + RandomInRange(0,8)",
+                        "Spawner.CenterY() + RandomInRange(0,8)",
                         ""
                       ]
                     },
