@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.5622643634299763,
+    "zoomFactor": 1.1245287268599509,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -423,6 +423,15 @@
                 "GlobalVariable(GameOptions.GameVolume) / 100",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "CanPlaySound",
+                "False"
+              ]
             }
           ]
         }
@@ -485,17 +494,49 @@
               "parameters": []
             }
           ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "CanPlaySound",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySound"
+                  },
+                  "parameters": [
+                    "",
+                    "ff4bf05320990a27ccb396af088267eba2a90522a28e6cb679620276bade876c_Laser-weapon 6.aac",
+                    "",
+                    "GlobalVariable(GameOptions.GameVolume)",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
           "actions": [
             {
               "type": {
-                "value": "PlaySound"
+                "value": "SetSceneVariableAsBoolean"
               },
               "parameters": [
-                "",
-                "ff4bf05320990a27ccb396af088267eba2a90522a28e6cb679620276bade876c_Laser-weapon 6.aac",
-                "",
-                "GlobalVariable(GameOptions.GameVolume)",
-                ""
+                "CanPlaySound",
+                "True"
               ]
             }
           ]
@@ -677,6 +718,15 @@
                 }
               ],
               "actions": [
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "CanPlaySound",
+                    "False"
+                  ]
+                },
                 {
                   "type": {
                     "value": "Scene"

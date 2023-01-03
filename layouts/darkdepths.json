@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.5236892941320155,
+    "zoomFactor": 0.7733980419227604,
     "windowMask": false
   },
   "objectsGroups": [
@@ -810,7 +810,12 @@
       "updateIfNotVisible": false,
       "variables": [],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "hellstone",
@@ -2275,6 +2280,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2781,6 +2787,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Spawner",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3297,7 +3304,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Tower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3877,7 +3883,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Give DMG (Test Application)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3895,44 +3900,104 @@
                 "",
                 ""
               ]
-            },
-            {
-              "type": {
-                "value": "MouseButtonReleased"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "AjoutObjConcern"
+                "value": "Tween::AddObjectScaleTween"
               },
               "parameters": [
+                "Hellstone",
+                "Tween",
+                "\"tweenSize\"",
+                "1.2",
+                "1.2",
+                "\"linear\"",
+                "200",
                 "",
-                "Enemies"
+                "yes"
               ]
             }
           ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
+              "conditions": [
                 {
                   "type": {
-                    "value": "ModVarObjet"
+                    "value": "MouseButtonReleased"
                   },
                   "parameters": [
-                    "Enemies",
-                    "EnemieHP",
-                    "-",
-                    "10"
+                    "",
+                    "Left"
                   ]
                 }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "AjoutObjConcern"
+                      },
+                      "parameters": [
+                        "",
+                        "Enemies"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Enemies",
+                        "EnemieHP",
+                        "-",
+                        "10"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Hellstone",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::AddObjectScaleTween"
+              },
+              "parameters": [
+                "Hellstone",
+                "Tween",
+                "\"tweenSize\"",
+                "1.0",
+                "1.0",
+                "\"linear\"",
+                "200",
+                "",
+                "yes"
               ]
             }
           ]
@@ -3945,7 +4010,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "\"Delete all blocks\"-Button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
