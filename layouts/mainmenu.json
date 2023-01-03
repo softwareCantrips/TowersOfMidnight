@@ -1203,7 +1203,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Upgrade Button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -1213,7 +1212,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Hover over",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1373,7 +1371,18 @@
                   "parameters": []
                 }
               ],
-              "actions": []
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Upgrade\"",
+                    ""
+                  ]
+                }
+              ]
             }
           ],
           "parameters": []

@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 1.4812170044621773,
+    "zoomFactor": 0.5236892941320155,
     "windowMask": false
   },
   "objectsGroups": [
@@ -103,7 +103,7 @@
       "layer": "UILayer",
       "name": "UiBox",
       "persistentUuid": "00f8c918-f99a-4757-a9fd-6fb5afb252c7",
-      "width": 625,
+      "width": 714,
       "x": 46,
       "y": 795,
       "zOrder": 3,
@@ -175,12 +175,12 @@
       "angle": 0,
       "customSize": false,
       "height": 0,
-      "layer": "",
+      "layer": "UILayer",
       "name": "Hellstone",
       "persistentUuid": "629290b8-d073-4a82-8796-57f42324965e",
       "width": 0,
-      "x": 607,
-      "y": 606,
+      "x": 614,
+      "y": 834,
       "zOrder": 1002,
       "numberProperties": [],
       "stringProperties": [],
@@ -265,12 +265,12 @@
       "angle": 0,
       "customSize": false,
       "height": 0,
-      "layer": "",
+      "layer": "UILayer",
       "name": "DelelteAllBlocks",
       "persistentUuid": "566e1c8f-19e4-4aaf-804f-b019ccb88b71",
       "width": 0,
-      "x": 679,
-      "y": 623,
+      "x": 686,
+      "y": 850,
       "zOrder": 1008,
       "numberProperties": [],
       "stringProperties": [],
@@ -1496,6 +1496,28 @@
         "g": 0,
         "r": 0
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": true,
+      "italic": false,
+      "name": "GameOver",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "GAME OVER",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 60,
+      "color": {
+        "b": 34,
+        "g": 231,
+        "r": 22
+      }
     }
   ],
   "events": [
@@ -1649,7 +1671,7 @@
           "parameters": [
             "HitPoints",
             "=",
-            "500"
+            "5"
           ]
         },
         {
@@ -2253,7 +2275,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2688,6 +2709,69 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "HitPoints",
+                "<=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PauseObjectTimer"
+              },
+              "parameters": [
+                "StoneTower",
+                "\"Cooldown\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PauseObjectTimer"
+              },
+              "parameters": [
+                "Spawner",
+                "\"spawnTimer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "GameOver",
+                "900",
+                "500",
+                "\"UILayer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "ProgressGems",
+                "+",
+                "Variable(Score)"
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
@@ -2840,6 +2924,7 @@
           ]
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -3975,6 +4060,17 @@
           ]
         }
       ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Game Over",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [],
       "parameters": []
     }
   ],

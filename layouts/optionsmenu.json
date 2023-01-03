@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 1.124528726859952,
+    "zoomFactor": 0.5622643634299763,
     "windowMask": false
   },
   "objectsGroups": [],
@@ -508,7 +508,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Back to Menu Button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",

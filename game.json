@@ -391,6 +391,12 @@
           "value": 0
         }
       ]
+    },
+    {
+      "folded": true,
+      "name": "ProgressGems",
+      "type": "number",
+      "value": 10
     }
   ],
   "layouts": [
@@ -405,6 +411,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/optionsmenu"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/upgrade"
     }
   ],
   "externalEvents": [],
