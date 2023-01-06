@@ -178,15 +178,6 @@
       },
       {
         "alwaysLoaded": false,
-        "file": "assets/block.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets\\block.png",
-        "smoothed": false,
-        "userAdded": false
-      },
-      {
-        "alwaysLoaded": false,
         "file": "assets/hellstone.png",
         "kind": "image",
         "metadata": "",
@@ -371,6 +362,15 @@
         "kind": "image",
         "metadata": "",
         "name": "assets\\Block-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/block.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\block.png",
         "smoothed": false,
         "userAdded": true
       }

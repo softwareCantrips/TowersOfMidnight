@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.7733980419227604,
+    "zoomFactor": 0.7733980419227602,
     "windowMask": false
   },
   "objectsGroups": [
@@ -62,6 +62,20 @@
           "name": "BugCreep"
         }
       ]
+    },
+    {
+      "name": "Ressources",
+      "objects": [
+        {
+          "name": "Ruby"
+        },
+        {
+          "name": "HessoniteGemstone"
+        },
+        {
+          "name": "Block"
+        }
+      ]
     }
   ],
   "variables": [],
@@ -103,7 +117,7 @@
       "layer": "UILayer",
       "name": "UiBox",
       "persistentUuid": "00f8c918-f99a-4757-a9fd-6fb5afb252c7",
-      "width": 714,
+      "width": 964,
       "x": 46,
       "y": 795,
       "zOrder": 3,
@@ -272,6 +286,66 @@
       "x": 686,
       "y": 850,
       "zOrder": 1008,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "UILayer",
+      "name": "Ruby",
+      "persistentUuid": "dd2f638f-ebda-43ac-ac3c-38bb59236746",
+      "width": 32,
+      "x": 745,
+      "y": 949,
+      "zOrder": 1009,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "LootBlock",
+      "persistentUuid": "b0da0cd4-cc53-4b54-8e3a-95f0d8dcd530",
+      "width": 0,
+      "x": 745,
+      "y": 992,
+      "zOrder": 1010,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "RubysText",
+      "persistentUuid": "e14a9592-df5c-4ba7-851f-a60b39c4a561",
+      "width": 0,
+      "x": 772,
+      "y": 934,
+      "zOrder": 1011,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "LootBlocksText",
+      "persistentUuid": "e02d6abd-b889-454e-9c8a-d0faae3f1610",
+      "width": 0,
+      "x": 773,
+      "y": 975,
+      "zOrder": 1012,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -517,8 +591,8 @@
                   "points": [],
                   "originPoint": {
                     "name": "origine",
-                    "x": 0,
-                    "y": 0
+                    "x": 8,
+                    "y": 8
                   },
                   "centerPoint": {
                     "automatic": true,
@@ -663,7 +737,14 @@
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "blockLoot",
+          "type": "number",
+          "value": 1
+        }
+      ],
       "effects": [],
       "behaviors": [
         {
@@ -736,6 +817,54 @@
                 {
                   "hasCustomCollisionMask": false,
                   "image": "assets\\Block3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "LootBlock",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "blockLoot",
+          "type": "number",
+          "value": 1
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "LootBlock",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.1,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\block.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -1523,6 +1652,50 @@
         "g": 231,
         "r": 22
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "RubysText",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "0",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 25,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "LootBlocksText",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "0",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 25,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
     }
   ],
   "events": [
@@ -1722,6 +1895,46 @@
             "",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "ModVarScene"
+          },
+          "parameters": [
+            "RubyCount",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarScene"
+          },
+          "parameters": [
+            "LootBlockCount",
+            "=",
+            "0"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextObject::String"
+          },
+          "parameters": [
+            "RubysText",
+            "=",
+            "\"\" + ToString(Variable(RubyCount))"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextObject::String"
+          },
+          "parameters": [
+            "LootBlocksText",
+            "=",
+            "\"\" + ToString(Variable(LootBlockCount))"
+          ]
         }
       ],
       "events": [
@@ -1794,7 +2007,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Portal is spawning",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2065,7 +2277,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Wenn UiSelection 1 = Auswahlwerkzeug",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2152,6 +2363,121 @@
               "parameters": [
                 "Block",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Block",
+                "blockLoot",
+                "=",
+                "RandomInRange(1,100)"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Block",
+                    "blockLoot",
+                    "<=",
+                    "33"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Ruby",
+                    "Block.X()",
+                    "Block.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "Ruby",
+                    "=",
+                    "4000"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Block",
+                    "blockLoot",
+                    "<=",
+                    "99"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "LootBlock",
+                    "Block.X() + 8",
+                    "Block.Y() - 8",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangePlan"
+                  },
+                  "parameters": [
+                    "LootBlock",
+                    "=",
+                    "4000"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetSize"
+                  },
+                  "parameters": [
+                    "LootBlock",
+                    "12",
+                    "12"
+                  ]
+                }
               ]
             }
           ]
@@ -3304,6 +3630,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Tower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3883,6 +4210,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Give DMG (Test Application)",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -4010,6 +4338,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "\"Delete all blocks\"-Button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -4136,6 +4465,171 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [],
       "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Collect Loot",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Click LootBlock",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "LootBlock",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "LootBlockCount",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "LootBlocksText",
+                    "=",
+                    "\"\" + ToString(Variable(LootBlockCount))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "LootBlock",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Click Ruby",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "Ruby",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "RubyCount",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "RubysText",
+                    "=",
+                    "\"\" + ToString(Variable(RubyCount))"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Ruby",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
     }
   ],
   "layers": [
