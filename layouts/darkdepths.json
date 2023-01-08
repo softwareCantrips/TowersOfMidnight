@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.7733980419227602,
+    "zoomFactor": 0.5710872247649726,
     "windowMask": false
   },
   "objectsGroups": [
@@ -292,36 +292,6 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "height": 32,
-      "layer": "UILayer",
-      "name": "Ruby",
-      "persistentUuid": "dd2f638f-ebda-43ac-ac3c-38bb59236746",
-      "width": 32,
-      "x": 745,
-      "y": 949,
-      "zOrder": 1009,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "UILayer",
-      "name": "LootBlock",
-      "persistentUuid": "b0da0cd4-cc53-4b54-8e3a-95f0d8dcd530",
-      "width": 0,
-      "x": 745,
-      "y": 992,
-      "zOrder": 1010,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
       "customSize": false,
       "height": 0,
       "layer": "UILayer",
@@ -346,6 +316,36 @@
       "x": 773,
       "y": 975,
       "zOrder": 1012,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "UILayer",
+      "name": "UiRuby",
+      "persistentUuid": "320aa6ce-974f-4866-87ac-be2b63259b25",
+      "width": 32,
+      "x": 750,
+      "y": 948,
+      "zOrder": 1013,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "UiLootBlock",
+      "persistentUuid": "4433e8ac-95cd-4403-9b84-6c03ccf7ff28",
+      "width": 0,
+      "x": 749,
+      "y": 989,
+      "zOrder": 1014,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -570,6 +570,47 @@
     {
       "assetStoreId": "5a98c3fb524283afae6e89d1f5627e3fa688048cafb577282c8cd045ed4ad412",
       "name": "Ruby",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Ruby.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 8,
+                    "y": 8
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "5a98c3fb524283afae6e89d1f5627e3fa688048cafb577282c8cd045ed4ad412",
+      "name": "UiRuby",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -840,6 +881,54 @@
     {
       "assetStoreId": "",
       "name": "LootBlock",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "blockLoot",
+          "type": "number",
+          "value": 1
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "LootBlock",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.1,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\block.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "UiLootBlock",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -1714,17 +1803,6 @@
       "actions": [
         {
           "type": {
-            "value": "ZoomCamera"
-          },
-          "parameters": [
-            "",
-            "2",
-            "",
-            ""
-          ]
-        },
-        {
-          "type": {
             "value": "CreateMultipleCopiesOfObject::CreateMultipleCopiesOfObject"
           },
           "parameters": [
@@ -1762,16 +1840,6 @@
             "0",
             "0",
             ""
-          ]
-        },
-        {
-          "type": {
-            "value": "ModVarGlobal"
-          },
-          "parameters": [
-            "ZoomLvl",
-            "=",
-            "2"
           ]
         },
         {
@@ -1874,30 +1942,6 @@
         },
         {
           "type": {
-            "value": "SetCameraCenterX"
-          },
-          "parameters": [
-            "",
-            "=",
-            "Portal.CenterX()",
-            "",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "SetCameraCenterY"
-          },
-          "parameters": [
-            "",
-            "=",
-            "Portal.CenterY()",
-            "",
-            ""
-          ]
-        },
-        {
-          "type": {
             "value": "ModVarScene"
           },
           "parameters": [
@@ -1934,6 +1978,16 @@
             "LootBlocksText",
             "=",
             "\"\" + ToString(Variable(LootBlockCount))"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarScene"
+          },
+          "parameters": [
+            "ZoomLvl",
+            "=",
+            "1"
           ]
         }
       ],
@@ -2003,10 +2057,63 @@
       ]
     },
     {
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "value": "SetCameraCenterX"
+          },
+          "parameters": [
+            "",
+            "=",
+            "Portal.CenterX()",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetCameraCenterY"
+          },
+          "parameters": [
+            "",
+            "=",
+            "Portal.CenterY()",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "ZoomLvl",
+            "=",
+            "2"
+          ]
+        },
+        {
+          "type": {
+            "value": "ZoomCamera"
+          },
+          "parameters": [
+            "",
+            "2",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    {
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Portal is spawning",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2175,6 +2282,26 @@
             "=",
             "CameraZoom()"
           ]
+        },
+        {
+          "type": {
+            "value": "DebuggerTools::ConsoleLog"
+          },
+          "parameters": [
+            "\"Camera Zoom = \" + ToString(CameraZoom(\"\"))",
+            "\"info\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarScene"
+          },
+          "parameters": [
+            "ZoomLvl",
+            "=",
+            "CameraZoom(\"\")"
+          ]
         }
       ]
     },
@@ -2227,6 +2354,26 @@
             "=",
             "CameraZoom()"
           ]
+        },
+        {
+          "type": {
+            "value": "DebuggerTools::ConsoleLog"
+          },
+          "parameters": [
+            "\"Camera Zoom = \" + ToString(CameraZoom(\"\"))",
+            "\"info\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarScene"
+          },
+          "parameters": [
+            "ZoomLvl",
+            "=",
+            "CameraZoom(\"\")"
+          ]
         }
       ]
     },
@@ -2277,6 +2424,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Wenn UiSelection 1 = Auswahlwerkzeug",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -4480,6 +4628,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Click LootBlock",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -4601,12 +4750,12 @@
                 },
                 {
                   "type": {
-                    "value": "TextObject::String"
+                    "value": "DebuggerTools::ConsoleLog"
                   },
                   "parameters": [
-                    "RubysText",
-                    "=",
-                    "\"\" + ToString(Variable(RubyCount))"
+                    "\"Game Ruby = X \" + LargeNumberToString(Ruby.X()) + \" | Y \" + LargeNumberToString(Ruby.Y())",
+                    "",
+                    ""
                   ]
                 },
                 {
@@ -4617,6 +4766,86 @@
                     "Ruby",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Ruby",
+                    "MouseX()",
+                    "MouseY()",
+                    "\"\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "\"Spawn Ruby = X \" + LargeNumberToString(Ruby.X()) + \" | Y \" + LargeNumberToString(Ruby.Y())",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetSize"
+                  },
+                  "parameters": [
+                    "Ruby",
+                    "32",
+                    "32"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AddForceVers"
+                  },
+                  "parameters": [
+                    "Ruby",
+                    "UiRuby",
+                    "200",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Distance"
+                  },
+                  "parameters": [
+                    "Ruby",
+                    "UiRuby",
+                    "10",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Ruby",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "RubysText",
+                    "=",
+                    "\"\" + ToString(Variable(RubyCount))"
+                  ]
                 }
               ]
             }
@@ -4625,11 +4854,6 @@
         }
       ],
       "parameters": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": []
     }
   ],
   "layers": [
