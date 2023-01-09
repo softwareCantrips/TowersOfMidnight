@@ -14,15 +14,15 @@
     "pixelsRounding": false,
     "projectUuid": "033097d4-c191-4629-836d-13d3d72fc54f",
     "scaleMode": "nearest",
-    "sizeOnStartupMode": "adaptWidth",
+    "sizeOnStartupMode": "",
     "templateSlug": "",
     "useExternalSourceFiles": false,
     "version": "1.0.0",
     "name": "TowersOfMidnight",
     "description": "",
     "author": "",
-    "windowWidth": 1920,
-    "windowHeight": 1080,
+    "windowWidth": 500,
+    "windowHeight": 500,
     "latestCompilationDirectory": "",
     "maxFPS": 60,
     "minFPS": 20,
@@ -373,6 +373,24 @@
         "name": "assets\\block.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Grid2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Grid2.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Grid1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Grid1.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -415,6 +433,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/upgrade"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/uitest"
     }
   ],
   "externalEvents": [],

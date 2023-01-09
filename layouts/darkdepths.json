@@ -2382,7 +2382,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Move camera with middle mouse button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
