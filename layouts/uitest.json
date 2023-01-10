@@ -533,8 +533,8 @@
           "parameters": [
             "",
             "Marker",
-            "MouseX() / CameraZoom()",
-            "MouseY() / CameraZoom()",
+            "MouseX(\"UI\", 0)",
+            "MouseY(\"UI\", 0)",
             "\"UI\""
           ]
         }
