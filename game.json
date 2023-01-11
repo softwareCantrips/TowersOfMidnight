@@ -391,6 +391,15 @@
         "name": "assets\\Grid1.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Hourglass.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Hourglass.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []

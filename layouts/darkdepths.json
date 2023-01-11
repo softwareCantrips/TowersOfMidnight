@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.370304251115544,
+    "zoomFactor": 0.546874999999981,
     "windowMask": false
   },
   "objectsGroups": [
@@ -117,7 +117,7 @@
       "layer": "UILayer",
       "name": "UiBox",
       "persistentUuid": "00f8c918-f99a-4757-a9fd-6fb5afb252c7",
-      "width": 964,
+      "width": 1121,
       "x": 46,
       "y": 795,
       "zOrder": 3,
@@ -346,6 +346,51 @@
       "x": 749,
       "y": 989,
       "zOrder": 1014,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "Phase",
+      "persistentUuid": "643baf0b-61ed-4bdf-834d-a72bbe52a81f",
+      "width": 0,
+      "x": 810,
+      "y": 832,
+      "zOrder": 1015,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "ActualPhase",
+      "persistentUuid": "3805d17a-6a5e-4acf-8a77-f2326f19cb1e",
+      "width": 0,
+      "x": 938,
+      "y": 832,
+      "zOrder": 1016,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "Hourglass",
+      "persistentUuid": "e23aac05-ac99-476a-a4d3-f2d49102e9b6",
+      "width": 0,
+      "x": 741,
+      "y": 827,
+      "zOrder": 1017,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1785,6 +1830,91 @@
         "g": 0,
         "r": 0
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Phase",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Phase :",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 30,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "ActualPhase",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Actual Phase",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 30,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "name": "Hourglass",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\Hourglass.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "events": [
@@ -1988,6 +2118,26 @@
             "ZoomLvl",
             "=",
             "1"
+          ]
+        },
+        {
+          "type": {
+            "value": "ModVarSceneTxt"
+          },
+          "parameters": [
+            "Phase",
+            "=",
+            "\"Mining\""
+          ]
+        },
+        {
+          "type": {
+            "value": "TextObject::String"
+          },
+          "parameters": [
+            "ActualPhase",
+            "=",
+            "VariableString(Phase)"
           ]
         }
       ],
@@ -2423,7 +2573,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Wenn UiSelection 1 = Auswahlwerkzeug",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -4618,6 +4767,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Collect Loot",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -4901,6 +5051,180 @@
             }
           ],
           "parameters": []
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Change Phase",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Hourglass",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarSceneTxt"
+              },
+              "parameters": [
+                "Phase",
+                "=",
+                "\"Mining\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Phase",
+                "=",
+                "\"Spawning\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "ActualPhase",
+                "=",
+                "VariableString(Phase)"
+              ]
+            },
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"On Hourglass Mining\"",
+                "\"info\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Hourglass",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarSceneTxt"
+              },
+              "parameters": [
+                "Phase",
+                "=",
+                "\"Spawning\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Phase",
+                "=",
+                "\"Mining\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "ActualPhase",
+                "=",
+                "VariableString(Phase)"
+              ]
+            },
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "\"On Hourglass Spawning\"",
+                "\"info\"",
+                ""
+              ]
+            }
+          ]
         }
       ],
       "parameters": []
