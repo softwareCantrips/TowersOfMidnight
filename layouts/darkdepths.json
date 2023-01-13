@@ -2185,15 +2185,6 @@
             },
             {
               "type": {
-                "value": "ResetObjectTimer"
-              },
-              "parameters": [
-                "Spawner",
-                "\"spawnTimer\""
-              ]
-            },
-            {
-              "type": {
                 "value": "SetSize"
               },
               "parameters": [
@@ -2902,7 +2893,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3409,7 +3399,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Spawner",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3581,6 +3570,7 @@
           ]
         },
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::ForEach",
           "object": "Spawner",
           "conditions": [],
@@ -5065,6 +5055,17 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Mining Phase",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [],
+          "parameters": []
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5138,9 +5139,201 @@
                 "value": "DebuggerTools::ConsoleLog"
               },
               "parameters": [
-                "\"On Hourglass Mining\"",
+                "\"Change the Phase to spawning\"",
                 "\"info\"",
                 ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Spawner",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "Spawner",
+                    "\"spawnTimer\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "\"Starting the spawn timer\"",
+                    "\"info\"",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Spawning Phase",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Spawner",
+          "conditions": [],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Spawner",
+                    "Block",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "\"The Timer of spawner = \" + ToString(Spawner.ObjectTimerElapsedTime(\"spawnTimer\"))",
+                    "\"info\"",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CompareObjectTimer"
+                      },
+                      "parameters": [
+                        "Spawner",
+                        "\"spawnTimer\"",
+                        ">",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "CreateByName"
+                      },
+                      "parameters": [
+                        "",
+                        "Enemies",
+                        "\"BugCreep\"",
+                        "Spawner.CenterX() + RandomInRange(0,8)",
+                        "Spawner.CenterY() + RandomInRange(0,8)",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DebuggerTools::ConsoleLog"
+                      },
+                      "parameters": [
+                        "\"Creep x = \" +  ToString(Spawner.X()) + \" Creep y = \" + ToString(Spawner.Y())",
+                        "\"info\"",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarObjet"
+                      },
+                      "parameters": [
+                        "Enemies",
+                        "EnemieHP",
+                        "=",
+                        "100"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DebuggerTools::ConsoleLog"
+                      },
+                      "parameters": [
+                        "\"Creep HP is set to: \" + ToString(Enemies.Variable(EnemieHP))",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "Enemies",
+                        "=",
+                        "299"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ResetObjectTimer"
+                      },
+                      "parameters": [
+                        "Spawner",
+                        "\"spawnTimer\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSize"
+                      },
+                      "parameters": [
+                        "Enemies",
+                        "10",
+                        "10"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::AddObjectColorTween"
+                      },
+                      "parameters": [
+                        "Enemies",
+                        "Tween",
+                        "\"ColorChange\"",
+                        "ToString(RandomInRange(0,127)) + \";\" + ToString(RandomInRange(0,255)) + \";\" + ToString(RandomInRange(0,127))",
+                        "\"linear\"",
+                        "1000",
+                        "",
+                        ""
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ]
@@ -5219,9 +5412,44 @@
                 "value": "DebuggerTools::ConsoleLog"
               },
               "parameters": [
-                "\"On Hourglass Spawning\"",
+                "\"Change the Phase to Mining\"",
                 "\"info\"",
                 ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Spawner",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PauseObjectTimer"
+                  },
+                  "parameters": [
+                    "Spawner",
+                    "\"spawnTimer\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DebuggerTools::ConsoleLog"
+                  },
+                  "parameters": [
+                    "\"Pausing the spawn timer\"",
+                    "\"info\"",
+                    ""
+                  ]
+                }
               ]
             }
           ]
