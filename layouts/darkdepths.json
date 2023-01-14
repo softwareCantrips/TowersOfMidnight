@@ -5160,6 +5160,15 @@
               "actions": [
                 {
                   "type": {
+                    "value": "UnPauseObjectTimer"
+                  },
+                  "parameters": [
+                    "Spawner",
+                    "\"spawnTimer\""
+                  ]
+                },
+                {
+                  "type": {
                     "value": "ResetObjectTimer"
                   },
                   "parameters": [
