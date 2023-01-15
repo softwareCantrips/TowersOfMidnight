@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.546874999999981,
+    "zoomFactor": 0.8807369002847166,
     "windowMask": false
   },
   "objectsGroups": [
@@ -391,6 +391,21 @@
       "x": 741,
       "y": 827,
       "zOrder": 1017,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 23,
+      "layer": "UILayer",
+      "name": "SpawnPhaseTimer",
+      "persistentUuid": "8792fe24-088c-4bb9-bf84-7fdede7f566d",
+      "width": 301,
+      "x": 810,
+      "y": 890,
+      "zOrder": 1018,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1915,6 +1930,28 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "SpawnPhaseTimer",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "SpawnPhaseTimer",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
     }
   ],
   "events": [
@@ -5143,6 +5180,15 @@
                 "\"info\"",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"spawnPhaseTimer\""
+              ]
             }
           ],
           "events": [
@@ -5352,22 +5398,40 @@
           "conditions": [
             {
               "type": {
-                "value": "SourisSurObjet"
+                "value": "VarSceneTxt"
               },
               "parameters": [
-                "Hourglass",
-                "",
-                "",
-                ""
+                "Phase",
+                "=",
+                "\"Spawning\""
               ]
-            },
+            }
+          ],
+          "actions": [
             {
               "type": {
-                "value": "MouseButtonReleased"
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "SpawnPhaseTimer",
+                "=",
+                "ToString(round(abs(TimerElapsedTime(\"spawnPhaseTimer\")-10)))"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
               },
               "parameters": [
                 "",
-                "Left"
+                "\"spawnPhaseTimer\"",
+                ">=",
+                "10"
               ]
             },
             {
@@ -5465,6 +5529,33 @@
         }
       ],
       "parameters": []
+    },
+    {
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "SourisSurObjet"
+          },
+          "parameters": [
+            "Hourglass",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "MouseButtonReleased"
+          },
+          "parameters": [
+            "",
+            "Left"
+          ]
+        }
+      ],
+      "actions": []
     }
   ],
   "layers": [
