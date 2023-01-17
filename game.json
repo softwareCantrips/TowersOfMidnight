@@ -400,6 +400,32 @@
         "name": "assets\\Hourglass.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Pickaxe_No Shadow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Pickaxe_No Shadow.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/32x32 Fantasy Icons Pack v2/Icons/General Items/ec9c01fbeba3745b0793a174c69811bf2d366c726c36fd162336dfd0a9ae2dec_Pickaxe_No Shadow.png",
+          "name": "Pickaxe_No Shadow.png"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Pickaxe_Shadow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Pickaxe_Shadow.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/32x32 Fantasy Icons Pack v2/Icons/General Items/34eded0a4279fd68c7c4ea5e760150abee9bdecfd25db790af115c57c59eb1e9_Pickaxe_Shadow.png",
+          "name": "Pickaxe_Shadow.png"
+        }
       }
     ],
     "resourceFolders": []

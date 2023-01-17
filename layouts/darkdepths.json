@@ -409,6 +409,36 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "UILayer",
+      "name": "Pickaxe",
+      "persistentUuid": "cb127087-4241-4d94-a747-1bb97cf9c5f9",
+      "width": 32,
+      "x": 825,
+      "y": 931,
+      "zOrder": 1019,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "Picks",
+      "persistentUuid": "ee912821-5ebc-4f71-9864-ca9dae57fbcd",
+      "width": 0,
+      "x": 867,
+      "y": 933,
+      "zOrder": 1020,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -1952,6 +1982,98 @@
         "g": 0,
         "r": 0
       }
+    },
+    {
+      "assetStoreId": "2b1f74628434448147cb688665b242b0c7f0e57afd464c580b101f874646633e",
+      "name": "Pickaxe",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "No Shadow",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Pickaxe_No Shadow.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Shadow",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.025,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Pickaxe_Shadow.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Picks",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "0",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 25,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
     }
   ],
   "events": [
@@ -2176,9 +2298,47 @@
             "=",
             "VariableString(Phase)"
           ]
+        },
+        {
+          "type": {
+            "value": "ModVarScene"
+          },
+          "parameters": [
+            "Picks",
+            "=",
+            "10"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextObject::String"
+          },
+          "parameters": [
+            "Picks",
+            "=",
+            "ToString(Variable(Picks))"
+          ]
         }
       ],
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Block",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "Block",
+                "blockLoot",
+                "=",
+                "RandomInRange(1,100)"
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Repeat",
           "repeatExpression": "28",
@@ -2560,6 +2720,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Move camera with middle mouse button",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -2661,6 +2822,16 @@
                 "MouseX(\"UILayer\")",
                 "MouseY(\"UILayer\")"
               ]
+            },
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "Picks",
+                ">",
+                "0"
+              ]
             }
           ],
           "actions": [
@@ -2691,13 +2862,22 @@
             },
             {
               "type": {
-                "value": "ModVarObjet"
+                "value": "ModVarScene"
               },
               "parameters": [
-                "Block",
-                "blockLoot",
+                "Picks",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "Picks",
                 "=",
-                "RandomInRange(1,100)"
+                "ToString(Variable(Picks))"
               ]
             }
           ],
@@ -2930,6 +3110,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "UI",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -3436,6 +3617,7 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
+      "folded": true,
       "name": "Spawner",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -5489,6 +5671,26 @@
                 "\"info\"",
                 ""
               ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Picks",
+                "=",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "Picks",
+                "=",
+                "ToString(Variable(Picks))"
+              ]
             }
           ],
           "events": [
@@ -5555,6 +5757,11 @@
           ]
         }
       ],
+      "actions": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
       "actions": []
     }
   ],
