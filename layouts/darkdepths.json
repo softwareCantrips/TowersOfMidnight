@@ -18,7 +18,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.8807369002847166,
+    "zoomFactor": 0.5710872247649709,
     "windowMask": false
   },
   "objectsGroups": [
@@ -436,6 +436,51 @@
       "x": 867,
       "y": 933,
       "zOrder": 1020,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "TowerCost",
+      "persistentUuid": "d2f56ff8-01ee-4a05-909d-3d80e3580ed1",
+      "width": 0,
+      "x": 1228,
+      "y": 1170,
+      "zOrder": 1025,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 90,
+      "layer": "UILayer",
+      "name": "UiBox",
+      "persistentUuid": "e2a665b9-0442-4f00-a473-31e3d1208b38",
+      "width": 216,
+      "x": 1202,
+      "y": 1142,
+      "zOrder": 1023,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "UILayer",
+      "name": "PopUpLootBlock",
+      "persistentUuid": "0910babc-0ea5-45fc-ba58-be8bf6b6c624",
+      "width": 0,
+      "x": 1362,
+      "y": 1184,
+      "zOrder": 1026,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1066,6 +1111,59 @@
     },
     {
       "assetStoreId": "",
+      "name": "PopUpLootBlock",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "folded": true,
+          "name": "blockLoot",
+          "type": "number",
+          "value": 1
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "LootBlock",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.1,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\block.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 16,
+                    "y": 16
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
       "name": "DelelteAllBlocks",
       "tags": "",
       "type": "Sprite",
@@ -1387,6 +1485,52 @@
       "variables": [],
       "effects": [],
       "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\Textbox.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "PopUpBox",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
       "animations": [
         {
           "name": "",
@@ -2073,6 +2217,33 @@
         "b": 0,
         "g": 0,
         "r": 0
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "TowerCost",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Need 2 ",
+      "font": "",
+      "textAlignment": "left",
+      "characterSize": 30,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 255
       }
     }
   ],
@@ -3069,11 +3240,172 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Wenn UiSelection2 = StoneTower",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Block",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "UiSelection",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "UiBox",
+                "MouseX(\"UILayer\")",
+                "MouseY(\"UILayer\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "LootBlockCount",
+                "<",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "TowerCost",
+                "MouseX(\"UILayer\", 0)",
+                "MouseY(\"UILayer\", 0) - 60",
+                "\"UILayer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "PopUpBox",
+                "MouseX(\"UILayer\", 0)",
+                "MouseY(\"UILayer\", 0) - 60",
+                "\"UILayer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "PopUpLootBlock",
+                "MouseX(\"UILayer\", 0) + 120",
+                "MouseY(\"UILayer\", 0) - 40",
+                "\"UILayer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "PopUpLootBlock",
+                "=",
+                "1100"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSize"
+              },
+              "parameters": [
+                "PopUpBox",
+                "160",
+                "40"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "TowerCost",
+                "Tween",
+                "\"FadeOut\"",
+                "0",
+                "\"linear\"",
+                "2000",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "PopUpBox",
+                "Tween",
+                "\"FadeOut\"",
+                "0",
+                "\"linear\"",
+                "2000",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "PopUpLootBlock",
+                "Tween",
+                "\"FadeOut\"",
+                "0",
+                "\"linear\"",
+                "2000",
+                ""
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -3116,6 +3448,16 @@
                 "UiBox",
                 "MouseX(\"UILayer\")",
                 "MouseY(\"UILayer\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "LootBlockCount",
+                ">=",
+                "2"
               ]
             }
           ],
@@ -3173,6 +3515,26 @@
               "parameters": [
                 "StoneTower",
                 "\"Cooldown\""
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "LootBlockCount",
+                "-",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "LootBlocksText",
+                "=",
+                "ToString(Variable(LootBlockCount))"
               ]
             }
           ]
@@ -5051,7 +5413,6 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
       "name": "Collect Loot",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -5833,11 +6194,6 @@
           ]
         }
       ],
-      "actions": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
       "actions": []
     }
   ],
