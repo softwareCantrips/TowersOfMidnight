@@ -1,0 +1,172 @@
+{
+  "author": "",
+  "category": "",
+  "extensionNamespace": "",
+  "fullName": "",
+  "helpPath": "",
+  "iconUrl": "",
+  "name": "DisplayBoxedMessage",
+  "previewIconUrl": "",
+  "shortDescription": "",
+  "version": "",
+  "description": "",
+  "tags": [],
+  "authorIds": [],
+  "dependencies": [],
+  "eventsFunctions": [
+    {
+      "description": "Display Message with Background",
+      "fullName": "Message with Background",
+      "functionType": "Action",
+      "name": "DisplayMessage",
+      "sentence": "Display _PARAM5_ on Background _PARAM1_ with showpiece _PARAM3_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Message",
+                "MouseX(\"UILayer\", 0)",
+                "MouseY(\"UILayer\", 0) - 60",
+                "\"UILayer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Background",
+                "MouseX(\"UILayer\", 0)",
+                "MouseY(\"UILayer\", 0) - 60",
+                "\"UILayer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Showpiece",
+                "MouseX(\"UILayer\", 0) + 120",
+                "MouseY(\"UILayer\", 0) - 40",
+                "\"UILayer\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetSize"
+              },
+              "parameters": [
+                "Background",
+                "160",
+                "40"
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "Showpiece",
+                "=",
+                "1100"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "Message",
+                "Tween",
+                "\"FadeOut\"",
+                "0",
+                "\"linear\"",
+                "2000",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "Background",
+                "Tween",
+                "\"FadeOut\"",
+                "0",
+                "\"linear\"",
+                "2000",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::AddObjectOpacityTween"
+              },
+              "parameters": [
+                "Showpiece",
+                "Tween",
+                "\"FadeOut\"",
+                "0",
+                "\"linear\"",
+                "2000",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Background",
+          "name": "Background",
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "description": "Tween",
+          "name": "Tween",
+          "supplementaryInformation": "Tween::TweenBehavior",
+          "type": "behavior"
+        },
+        {
+          "description": "Showpiece",
+          "name": "Showpiece",
+          "supplementaryInformation": "Sprite",
+          "type": "objectList"
+        },
+        {
+          "description": "Tween",
+          "name": "Tween",
+          "supplementaryInformation": "Tween::TweenBehavior",
+          "type": "behavior"
+        },
+        {
+          "description": "Message",
+          "name": "Message",
+          "supplementaryInformation": "TextObject::Text",
+          "type": "objectList"
+        },
+        {
+          "description": "Tween",
+          "name": "Tween",
+          "supplementaryInformation": "Tween::TweenBehavior",
+          "type": "behavior"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}

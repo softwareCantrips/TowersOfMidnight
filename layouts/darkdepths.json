@@ -3245,6 +3245,7 @@
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
+          "disabled": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -3401,6 +3402,85 @@
                 "0",
                 "\"linear\"",
                 "2000",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonReleased"
+              },
+              "parameters": [
+                "",
+                "Left"
+              ]
+            },
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
+                "Block",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "UiSelection",
+                "=",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "UiBox",
+                "MouseX(\"UILayer\")",
+                "MouseY(\"UILayer\")"
+              ]
+            },
+            {
+              "type": {
+                "value": "VarScene"
+              },
+              "parameters": [
+                "LootBlockCount",
+                "<",
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DisplayBoxedMessage::DisplayMessage"
+              },
+              "parameters": [
+                "",
+                "PopUpBox",
+                "Tween",
+                "PopUpLootBlock",
+                "Tween",
+                "TowerCost",
+                "Tween",
                 ""
               ]
             }
